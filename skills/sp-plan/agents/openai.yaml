@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sparkedin Plan"
+  short_description: "Plan the week on LinkedIn: posts, timing, who to engage"
+  default_prompt: "Use $sp-plan to plan my week on LinkedIn"
+policy:
+  allow_implicit_invocation: true

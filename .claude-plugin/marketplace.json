@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "sparkedin",
+  "description": "The Sparkedin skill pack for LinkedIn, for Muse, Claude, ChatGPT and Codex",
+  "owner": {
+    "name": "Krishi Attri",
+    "url": "https://github.com/Archerkattri"
+  },
+  "plugins": [
+    {
+      "name": "sparkedin",
+      "description": "Eleven LinkedIn skills that execute: posts off 21 hook formulas, comments, replies, profile score, weekly plan, DMs, inbox triage, carousels, repurposing, audits, and a humanizer that strips the AI fingerprint and scores the draft before it goes out.",
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/Archerkattri/sparkedin"
+    }
+  ]
+}

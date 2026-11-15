@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sparkedin Reply"
+  short_description: "Draft replies to the comments under your own posts"
+  default_prompt: "Use $sp-reply to handle the comments on my post"
+policy:
+  allow_implicit_invocation: true
