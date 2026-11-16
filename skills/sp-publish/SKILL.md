@@ -54,11 +54,13 @@ difference.
    header in `YYYYMM` form, plus `X-Restli-Protocol-Version: 2.0.0`.
    LinkedIn versions the API monthly and supports each monthly version
    for at least 1 year. Version 202511 sunsets 16 November 2026, so any
-   call still pinned to 202511 after that date fails. The current live
-   version could not be confirmed from the research report, so do not
-   guess a version string and do not reuse a version from memory. Read
-   the current version from Microsoft Learn before every call:
-   https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api
+   call still pinned to 202511 after that date fails. As of 16 November
+   2026 the latest version is 202610 (October 2026), read live from the
+   Microsoft Learn migrations page; it stays supported until 15 October
+   2027. A newer monthly version may have shipped since, so always
+   re-check the migrations page before a call and never reuse a version
+   from memory:
+   https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations
    A 426 error means a sunset version or a missing version header. Fix
    the version from that page, do not retry the same version.
 4. Creating an app requires linking a Company Page, even for personal
@@ -95,11 +97,11 @@ difference.
      comment, when the point of the post is the article itself. For a
      plain text post, the link still goes in the first comment, per
      `/sp-post`.
-   - **Poll.** Poll support through the API is UNCONFIRMED in the
-     current docs. Do not promise it. Check the current Posts API schema
-     on the Microsoft Learn page in Setup before you attempt it. If the
-     schema does not confirm it, say so plainly and post the poll in the
-     browser instead, with the user clicking post.
+   - **Poll.** Polls ARE supported through the API for organic
+     (non-sponsored) posts: the Posts API page lists Poll as an organic
+     content type and has a Poll Post Creation sample. Sponsored polls
+     are not supported. Check the Poll API section on the Microsoft Learn
+     page in Setup for the exact fields before you attempt it.
 3. Read the response. A 201 with a post URN in the `x-restli-id` header
    is published. Anything else is not published. Report the error
    exactly, do not retry blindly, and do not claim the post went out
