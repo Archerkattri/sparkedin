@@ -16,7 +16,21 @@ Three passes, in this order:
 
 Structural tells (rule-of-three, "not just X, it's Y", hashtag walls) are
 REPORTED, never auto-rewritten - rewriting a sentence's shape needs judgement,
-so that is the model's job, not a regex's.
+so that is the model's job, not a regex's. Era-successor words in the
+density_watch list are also REPORTED, never replaced: they are common words
+and only a problem at density.
+
+The em dash pass stays on the user's instruction: the house writing guide
+bans em dashes, so they are stripped, full stop. The research says one em
+dash proves nothing about authorship; the ban is a style rule, and
+stripping costs nothing.
+
+What this tool never does: it never adds typos, random synonyms, slang,
+fragments, or invisible characters to fake a human voice. The research is
+clear that those moves do not change the statistical signals, they make the
+text worse, and they leave a humanizer fingerprint detectors retrain on.
+Synonym-swapping is doubly banned: it makes the repetition check worse,
+because humans repeat terms and models synonym-chase.
 
 Usage
   python3 humanize.py draft.txt
@@ -154,6 +168,22 @@ def pass_lexical(text, lex):
     return text, hits
 
 
+def scan_density(text, lex):
+    """Era-successor words: counted, never auto-replaced.
+
+    Words like 'significant' are common in human writing too. They only
+    matter at density, in combination with the structural signals, so they
+    are reported here and scored at half weight by detect.py.
+    """
+    hits = []
+    for entry in lex.get("density_watch", []):
+        pattern = re.compile(r"\b" + re.escape(entry["find"]) + r"\b", re.IGNORECASE)
+        n = len(pattern.findall(text))
+        if n:
+            hits.append({"find": entry["find"], "count": n})
+    return hits
+
+
 def scan_structures(text, lex):
     flags = []
     for s in lex["structures"]:
@@ -163,7 +193,11 @@ def scan_structures(text, lex):
             continue
         found = pattern.findall(text)
         if found:
-            flags.append({"name": s["name"], "count": len(found), "fix": s["fix"]})
+            name = s["name"]
+            if s.get("scored") is False:
+                # Formatting provenance, not an authorship signal.
+                name += " [formatting, not authorship]"
+            flags.append({"name": name, "count": len(found), "fix": s["fix"]})
     # Sentence-length uniformity is structural too.
     lens = [len(s.split()) for s in SENT_RE.findall(text) if len(s.split()) > 2]
     if len(lens) >= 4:
@@ -174,7 +208,7 @@ def scan_structures(text, lex):
             flags.append({
                 "name": f"Uniform sentence length (variation {cv:.2f})",
                 "count": len(lens),
-                "fix": "Break one sentence in half. Let another run long. Machines write even.",
+                "fix": "Split the longest sentence in the paragraph and add one parenthetical aside. Restructure, do not alternate long and short on a timer.",
             })
     return flags
 
@@ -190,6 +224,7 @@ def humanize(text, lex):
         "typographic": typo,
         "lexical": lexi,
         "structures": scan_structures(text, lex),
+        "density_watch": scan_density(text, lex),
     }
 
 
@@ -221,6 +256,10 @@ def render_report(report, out=sys.stderr):
         head("4. STRUCTURAL TELLS  (not auto-fixed - rewrite these yourself)")
         for h in report["structures"]:
             print(f"  {h['count']:>3}x  {h['name']}\n        {h['fix']}", file=out)
+    if report["density_watch"]:
+        head("5. DENSITY WATCH  (common words, only a problem at density - not auto-fixed)")
+        for h in report["density_watch"]:
+            print(f"  {h['count']:>3}x  {h['find']}  -> left in place", file=out)
     if not any(report.values()):
         head("CLEAN")
         print("  Nothing to strip.", file=out)

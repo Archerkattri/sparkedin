@@ -26,7 +26,7 @@
 
 - `/sp-plan` builds the week on LinkedIn and writes `<profile>/plan.md`. Read `skills/sp-plan/SKILL.md`.
 
-- `/sp-human` strips the machine fingerprint out of a draft and scores it on five checks. Read `skills/sp-human/SKILL.md`.
+- `/sp-human` strips the machine fingerprint out of a draft and scores it on six checks. Read `skills/sp-human/SKILL.md`.
 
 - `/sp-repurpose` turns one long asset into a week of posts. Read `skills/sp-repurpose/SKILL.md`.
 

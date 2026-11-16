@@ -1,6 +1,6 @@
 {
-  "version": "1.1",
-  "note": "Lexicon used by humanize.py and detect.py. Replacements are plain-English and keep the sentence grammatical. Edit freely - it is meant to be yours. Version 1.1 adds the house writing-guide rules: more slop words and phrases, plus structural tells for bold-first bullets, throat-clearing openers, credential openers and colon lectures.",
+  "version": "1.2",
+  "note": "Lexicon used by humanize.py and detect.py. Replacements are plain-English and keep the sentence grammatical. Edit freely - it is meant to be yours. Version 1.2 (2026-11-16) applies the humanizer writing research: focal-vocabulary list is density-scored, not banned; era-successor words live in density_watch (counted, never auto-replaced); structural tells add negative-parallelism variants, moralizing closers, scaffolding intros and vague attribution. The list is date-stamped: re-fit quarterly, next due 2027-02-16, because focal words expire within a model generation.",
   "invisible": [
     {
       "cp": "U+200B",
@@ -625,6 +625,51 @@
       "find": "commendable",
       "replace": "good",
       "family": "adjectives"
+    },
+    {
+      "find": "showcasing",
+      "replace": "showing",
+      "family": "verbs"
+    },
+    {
+      "find": "garner",
+      "replace": "get",
+      "family": "verbs"
+    },
+    {
+      "find": "paramount",
+      "replace": "top",
+      "family": "adjectives"
+    },
+    {
+      "find": "adept",
+      "replace": "skilled",
+      "family": "adjectives"
+    },
+    {
+      "find": "akin",
+      "replace": "like",
+      "family": "adjectives"
+    },
+    {
+      "find": "amidst",
+      "replace": "among",
+      "family": "connectives"
+    },
+    {
+      "find": "emphasizing",
+      "replace": "stressing",
+      "family": "verbs"
+    },
+    {
+      "find": "highlighting",
+      "replace": "showing",
+      "family": "verbs"
+    },
+    {
+      "find": "enhance",
+      "replace": "improve",
+      "family": "verbs"
     }
   ],
   "phrases": [
@@ -827,6 +872,41 @@
       "find": "it is important to note that",
       "replace": "note that",
       "family": "openers"
+    },
+    {
+      "find": "serves as",
+      "replace": "is",
+      "family": "verbs"
+    },
+    {
+      "find": "plays a pivotal role in",
+      "replace": "drives",
+      "family": "verbs"
+    },
+    {
+      "find": "plays a key role in",
+      "replace": "drives",
+      "family": "verbs"
+    },
+    {
+      "find": "in today's fast-paced digital landscape",
+      "replace": "right now",
+      "family": "openers"
+    },
+    {
+      "find": "thrilled to announce",
+      "replace": "",
+      "family": "openers"
+    },
+    {
+      "find": "i almost didn't post this",
+      "replace": "",
+      "family": "openers"
+    },
+    {
+      "find": "i almost didn't share this",
+      "replace": "",
+      "family": "openers"
     }
   ],
   "structures": [
@@ -864,7 +944,8 @@
       "id": "triad",
       "regex": "(?i)\\b\\w+, \\w+, and \\w+\\.",
       "name": "Rule-of-three triad",
-      "fix": "Two items or four. Three is the model's default rhythm."
+      "fix": "Two items or four. Three is the model's default rhythm.",
+      "density_only": true
     },
     {
       "id": "rocket",
@@ -888,7 +969,8 @@
       "id": "in-summary",
       "regex": "(?i)^\\s*(?:in summary|to summarize|in conclusion)\\b",
       "name": "Essay-closer opener",
-      "fix": "A post does not need a conclusion paragraph."
+      "fix": "A post does not need a conclusion paragraph.",
+      "density_only": true
     },
     {
       "id": "engagement-bait",
@@ -900,7 +982,8 @@
       "id": "bold-lead-bullets",
       "regex": "(?m)^\\s*[-*\\u2022]\\s+\\*\\*[^*\\n]+\\*\\*:?",
       "name": "Bold-first bullets",
-      "fix": "Drop the bold lead-in. Start with the fact."
+      "fix": "Drop the bold lead-in. Start with the fact.",
+      "scored": false
     },
     {
       "id": "throat-clearing",
@@ -919,6 +1002,44 @@
       "regex": "(?i)\\b(?:here'?s the key point|the answer is simple|here'?s the bottom line)\\s*:",
       "name": "Colon lecture",
       "fix": "Weave it in instead of announcing it."
+    },
+    {
+      "id": "less-more",
+      "regex": "(?i)\\bless about [^.!?\\n]{2,60},? more about\\b",
+      "name": "\"Less about X, more about Y\"",
+      "fix": "State the claim directly. The reversal is the tell."
+    },
+    {
+      "id": "moral-closer",
+      "regex": "(?i)\\b(?:the (?:real )?lesson(?: here)? is|what (?:this|it) taught me|the takeaway is|reminds us that|the moral of the story)\\b",
+      "name": "Moralizing closer / stated lesson",
+      "fix": "Delete the stated lesson. End where the argument ends and let the reader infer it."
+    },
+    {
+      "id": "scaffold-intro",
+      "regex": "(?i)\\bin this (?:article|post|piece),? (?:we|i) (?:will|'ll)\\b",
+      "name": "Scaffolding intro",
+      "fix": "Delete the announcement. Start with the first specific sentence."
+    },
+    {
+      "id": "vague-attribution",
+      "regex": "(?i)\\b(?:experts|studies|research|reports|many (?:people|experts))\\s+(?:say|show|suggest|indicate|argue|believe|find)\\b",
+      "name": "Vague attribution, no named source",
+      "fix": "Name the source, the date, and the number, or cut the claim. Flag as specifics to add."
+    }
+  ],
+  "density_watch": [
+    {
+      "find": "significant",
+      "note": "Economist 2026 era successor to delve/tapestry; common word, only a signal at density"
+    },
+    {
+      "find": "increasingly",
+      "note": "Economist 2026 era successor; common word, only a signal at density"
+    },
+    {
+      "find": "consequences",
+      "note": "Economist 2026 era successor; common word, only a signal at density"
     }
   ]
 }

@@ -46,7 +46,7 @@ Built for Muse first. Also works with Claude Code, ChatGPT, and Codex.
 
 ```bash
 python3 humanize.py draft.txt --report      # clean it, show every change
-python3 detect.py draft.txt                  # score it, five checks
+python3 detect.py draft.txt                  # score it, six checks
 python3 detect.py before.txt after.txt       # prove the delta
 ```
 
@@ -54,21 +54,22 @@ python3 detect.py before.txt after.txt       # prove the delta
 
 - **Invisible characters.** Zero-width spaces and joiners, word joiners, soft hyphens, byte-order marks, Unicode tag characters, non-breaking and narrow spaces. Your keyboard does not make these. They survive copy-paste and they are invisible in every editor you own.
 - **Typography.** Em dash to comma, en dash to hyphen, curly quotes to straight, ellipsis to three dots.
-- **The lexicon.** 136 stock words and phrases with plain-English replacements, with capitalisation preserved and URLs untouched. It lives in [`slop.json`](skills/sp-human/slop.json) and it is meant to be edited. The house writing-guide rules are baked in: any em dash is a hard fail, zero contractions caps the voice check, and a draft with no numbers or names scores zero on specificity.
+- **The lexicon.** 152 stock words and phrases with plain-English replacements, with capitalisation preserved and URLs untouched. It lives in [`slop.json`](skills/sp-human/slop.json) and it is meant to be edited. The house writing-guide rules are baked in: any em dash is a hard fail, zero contractions caps the voice check, and a draft with no numbers or names scores zero on specificity. The list is date-stamped and re-fit quarterly, because focal words expire within a model generation.
 
-**Flagged instead of fixed:** "It's not just X, it's Y", rule-of-three triads, one-word rhetorical questions, hashtag walls, reflex engagement bait, uniform sentence length. Changing the shape of a sentence needs judgement, so those are handed back for a rewrite rather than mangled by a regex.
+**Flagged instead of fixed:** "It's not just X, it's Y", rule-of-three triads, one-word rhetorical questions, moralizing closers, vague attribution with no named source, hashtag walls, reflex engagement bait, uniform sentence length. Changing the shape of a sentence needs judgement, so those are handed back for a rewrite rather than mangled by a regex.
 
-**The five checks**, scored 0 to 100, higher is more human:
+**The six checks**, scored 0 to 100, higher is more human:
 
 | Check | What it measures |
 | --- | --- |
-| BURSTINESS | Sentence-length variation. Models write even. |
+| BURSTINESS | Sentence-length variation. Weak and contested, never the top signal. |
 | SPECIFICITY | Numbers, names, and concrete markers per 100 words |
-| SLOP DENSITY | Lexicon hits per 100 words |
+| SLOP DENSITY | Lexicon hits per 100 words, density-scored. One word proves nothing. |
 | FINGERPRINT | Invisible characters, em dashes, and curly quotes per 1,000 |
-| VOICE | Contractions, person, and structural tells |
+| VOICE | Contractions, person, punctuation variety, and structural tells |
+| REPETITION | Vocabulary variety and adjacent-sentence term overlap. The strongest measured signal: humans repeat terms, models synonym-chase. |
 
-The verdict weights the mean at 60% and the **weakest single check** at 40%, because a detector only needs one signal to fire.
+The verdict weights the mean at 60% and the **weakest strong check** at 40%, because a detector only needs one signal to fire. Burstiness is excluded from the weakest-check term.
 
 ## Get started
 
@@ -129,7 +130,7 @@ Sparkedin is built and maintained by Krishi Attri. It started as a fork of the L
 
 - **Your agent's approval flow is the gate.** There is no separate draft-only mode and no pace cap in the skill itself.
 - **LinkedIn restricts accounts for high-volume automated activity.** If your account gets restricted, pace is the likely cause.
-- **The five checks are local heuristics, not detector APIs.** They are modelled on the signals public detectors key on, and they run entirely on your machine. They are not GPTZero, Originality, Copyleaks, Winston, or Turnitin, they do not call those services, and they cannot promise those verdicts. Fixing what they measure tends to move those numbers, because they are measuring the same underlying things.
+- **The six checks are local heuristics, not detector APIs.** They are modelled on the signals public detectors key on, and they run entirely on your machine. They are not GPTZero, Originality, Copyleaks, Winston, or Turnitin, they do not call those services, and they cannot promise those verdicts. Fixing what they measure tends to move those numbers, because they are measuring the same underlying things.
 - **The invisible-character pass is real and it is narrow.** It removes the zero-width and format characters that end up in generated text and survive a copy-paste. That is a genuine, checkable fingerprint. It is not a claim about defeating a cryptographic watermarking scheme, and this repo does not make one.
 - **Nothing here fabricates.** No invented metrics, clients, or outcomes go under your name. If a draft needs a number you have not given, it comes back with `{{your number}}` in it and a flag, every time.
 
