@@ -1,6 +1,0 @@
-interface:
-  display_name: "Sparkedin DM"
-  short_description: "Write connection notes and DM follow-ups that get replies"
-  default_prompt: "Use $sp-dm to write a connection note to this person"
-policy:
-  allow_implicit_invocation: true
