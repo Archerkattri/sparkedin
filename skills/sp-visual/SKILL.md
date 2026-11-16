@@ -13,7 +13,7 @@ description: >-
 
 Profile directory: `<profile>` holds voice.md, log.md, plan.md and outreach.md. Muse uses `~/workspace/linkedin/`, Claude Code uses `~/.claude/linkedin/`, ChatGPT and Codex use a folder you choose.
 
-sp-human strips the AI fingerprint from words. This skill strips it from images. Same job, different surface. A banner or post image that reads as AI slop costs trust before anyone reads a word on it. LinkedIn added a "Seems like AI slop" report button in July 2026 and it was clicked over a million times in two weeks. The fix is not "no AI". The fix is visible human decisions: restraint, a real photograph of actual work, one specific thing, ordinary light, texture and grain, one idea.
+sp-human strips the AI fingerprint from words. This skill strips it from images. Same job, different surface. A banner or post image that reads as AI slop costs trust before anyone reads a word on it. LinkedIn added a "Seems like AI slop" report button in July 2026 and it was clicked over a million times in two weeks (LinkedIn's own figure, no published method). The fix is not "no AI". The fix is visible human decisions: restraint, a real photograph of actual work, one specific thing, ordinary light, texture and grain, one idea.
 
 ## 1. The tells: what makes an image read as AI slop
 
@@ -85,9 +85,14 @@ One image, one message, one contrast point. Real photograph of the actual work, 
 ## 5. Post images and carousel art
 
 - One idea per image. One image, one headline, one call to action.
+- Attach an image by default. Images lift reactions 35%
+  within-creator (Flypost, 116,000+ posts), the most reliable format
+  lift, ahead of video at +15% and carousel at +11% within-creator.
+  Cross-sectional rankings put documents first, but those compare
+  different authors, so quote the denominator with the number.
 - Real photography first. A photo of the actual thing, shot plainly, beats a generated hero every time.
 - No baked-in text on post images either. If the post needs words on the image, they go on as layers in an editor, in the brand fonts.
-- Carousel covers: one strong contrast point, one message, restrained. A single illustration in one brand colour with no text at all reads as confidence.
+- Carousel covers: one strong contrast point, one message, restrained. A single illustration in one brand colour with no text at all reads as confidence. The cover does about 70% of the work (vendor estimate, EcomGhosts, not a LinkedIn measurement), so make it outcome-led with a specific number or benefit, not a vague title.
 - Never reuse the banner's background as a post image. Same image twice reads as a template.
 
 ## 6. QC checklist (reject the image if any item fails)

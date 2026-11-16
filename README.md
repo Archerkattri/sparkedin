@@ -8,7 +8,7 @@ Built for Muse first. Also works with Claude Code, ChatGPT, and Codex.
 
 ## What it does
 
-- **Write.** One idea becomes a post built on 21 proven hook formulas, with three hook options and a full draft, or a document post as slide copy and a PDF.
+- **Write.** One idea becomes a post built on 21 hook formulas, ranked by 2026 evidence, with three hook options and a full draft, or a document post as slide copy and a PDF.
 - **Engage.** Comments that add something real, replies that sort the signal from the noise, and an inbox triaged into leads, recruiters, peers, and spam.
 - **Reach out.** Full campaigns. Pick the path first, then the note, the DM, two follow-ups, and the thank-you when they accept. Every target tracked. And the email half: find their work address, label it published or a guess, send the CV outreach, watch for the bounce.
 - **Measure.** Your profile scored out of 100 with fixes in order, your past posts ranked by what actually worked, your own engagement pulled into JSON and a dashboard, and a weekly analytics journal built from numbers you paste in.

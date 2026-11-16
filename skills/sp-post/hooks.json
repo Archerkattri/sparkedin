@@ -1,12 +1,13 @@
 {
   "version": "1.0",
-  "note": "21 hook formulas. Line 1 of a LinkedIn post is the whole game - the feed truncates at roughly 210 characters on desktop and 140 on mobile before 'see more', so the hook has to survive alone. Every formula here has a template, a filled example, what it is for, and the way it usually gets ruined.",
+  "note": "21 hook formulas. Line 1 of a LinkedIn post is the whole game - the feed truncates at roughly 210 characters on desktop and 140 on mobile before 'see more', so the hook has to survive alone. Every formula here has a template, a filled example, what it is for, and the way it usually gets ruined. Ranked evidence (AuthoredUp 309,614 posts, Dec 2025-May 2026, median engagement): story 2.60%, contrarian 2.31%, statement 2.27%, results 2.19%, question 2.16% last. Question first lines also measured -34% median likes in MagicPost (1.18M posts) and -17% in Flypost. Hook 0-40 chars: 2.61% vs 2.08% at 200+ chars. First-person first line: +19% within-creator (Flypost). Prefer story, contrarian, statement and results hooks; use a question hook last, and only when the question is specific enough that only this person could ask it.",
   "rules": [
     "One idea per hook. If it needs a comma splice, it needs two posts.",
     "Line 2 is not a hook, it is the payoff of line 1. Never waste it on setup.",
     "No question marks in line 1 unless the question is specific enough that only you could ask it.",
     "Numbers beat adjectives. '$4,200' beats 'a lot of money' every time.",
-    "If the hook works with any other person's name on it, it is not your hook."
+    "If the hook works with any other person's name on it, it is not your hook.",
+    "Ranked by evidence: story and contrarian first, statement and results next, question hooks last. A question hook is a last resort, never the default."
   ],
   "hooks": [
     {
@@ -14,8 +15,8 @@
       "name": "Contrarian Take",
       "template": "Everyone says {common advice}. After {specific experience}, I think that is wrong.",
       "example": "Everyone says post daily. I posted 4x a week for a year and beat every daily poster in my niche.",
-      "best_for": "Establishing a point of view. Highest comment rate of any formula.",
-      "trap": "Being contrarian about something nobody believes. The belief has to be genuinely common."
+      "best_for": "Establishing a point of view. Contrarian hooks measured 2.31% median engagement, second only to story (AuthoredUp).",
+      "trap": "Being contrarian about something nobody believes. The belief has to be genuinely common. A tired contrarian line with no lived detail reads as AI slop."
     },
     {
       "id": 2,
@@ -46,8 +47,8 @@
       "name": "The List Promise",
       "template": "{N} things I wish someone had told me before {milestone}.",
       "example": "7 things I wish someone had told me before I hired my first employee.",
-      "best_for": "Saves. Highest save rate of the 21, which LinkedIn weights heavily.",
-      "trap": "N above 10. The reader does not believe you have 15 good ones, and you do not."
+      "best_for": "Saves. List posts earn saves when every item is specific and earned.",
+      "trap": "N above 10. The reader does not believe you have 15 good ones, and you do not. A generic listicle with no lived detail is what the May 2026 slop crackdown targets."
     },
     {
       "id": 6,
@@ -67,18 +68,18 @@
     },
     {
       "id": 8,
-      "name": "Question Trap",
+      "name": "Question Trap (demoted: use last)",
       "template": "{Specific scenario with a real cost}. What do you do?",
       "example": "Your best client asks for a 40% discount and hints they will leave without it. What do you do?",
-      "best_for": "Comment volume. People answer scenarios, they ignore 'thoughts?'.",
-      "trap": "A question with an obvious right answer. There has to be a real fork."
+      "best_for": "Comment volume only when the scenario has a real fork. Question hooks measured worst of five openers (2.16% median, AuthoredUp) and -34% median likes in MagicPost, so use this last, never by default.",
+      "trap": "A question with an obvious right answer. There has to be a real fork. A generic question ('What do you think?') is the weakest opener in the data."
     },
     {
       "id": 9,
       "name": "Story Cold Open",
       "template": "\"{Line of dialogue}\"\\n\\n{Who said it, when, and why it mattered}.",
       "example": "\"We are going with someone cheaper.\"\\n\\nThat email arrived 40 minutes after I sent my best proposal of the year.",
-      "best_for": "Long-form storytelling posts. Highest dwell time.",
+      "best_for": "Long-form storytelling posts. Story hooks measured 2.60% median engagement, the best opener (AuthoredUp), and first-person first lines lift reactions 19% (Flypost).",
       "trap": "Dialogue nobody would actually say. Use the real line, including the ugly parts."
     },
     {
@@ -86,7 +87,7 @@
       "name": "The Receipt",
       "template": "{Screenshot or hard number}. {One sentence of context}.",
       "example": "3 clients, 11 days, zero calls booked. Here is the exact sequence that did it.",
-      "best_for": "Anything you can prove. Pair with an image and reach roughly doubles.",
+      "best_for": "Anything you can prove. Pair with an image: images lift reactions 35% within-creator (Flypost).",
       "trap": "A receipt with no story attached. The number opens the door, the story is the room."
     },
     {
@@ -142,7 +143,7 @@
       "name": "Time Anchor",
       "template": "{Task} used to take me {long time}. It now takes {short time}.",
       "example": "Writing a week of posts used to take me 5 hours. It now takes 20 minutes.",
-      "best_for": "Tool, system and automation posts. The strongest hook shape for a how-to.",
+      "best_for": "Tool, system and automation posts. A results hook with a specific number; results hooks measured 2.19% median engagement (AuthoredUp).",
       "trap": "An unbelievable ratio. 5 hours to 20 minutes lands. 5 hours to 8 seconds does not."
     },
     {
@@ -174,8 +175,8 @@
       "name": "The Direct Value",
       "template": "Here is the exact {artifact} I used to {specific outcome}. Steal it.",
       "example": "Here is the exact 4-line email I used to reopen 3 dead deals. Steal it.",
-      "best_for": "Lead magnets and comment-for-link posts. Highest conversion of the 21.",
-      "trap": "Making them ask for something you could have just posted. Give the artifact away in the post."
+      "best_for": "Lead magnets where the artifact is given away in the post itself.",
+      "trap": "Making them ask for something you could have just posted. Give the artifact away in the post. Never gate it behind 'Comment KEYWORD': that bait is dead since July 2026."
     }
   ]
 }

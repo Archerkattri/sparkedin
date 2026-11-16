@@ -12,8 +12,10 @@ description: >-
 
 Profile directory: `<profile>` holds voice.md, log.md and plan.md. Muse uses `~/workspace/linkedin/`, Claude Code uses `~/.claude/linkedin/`, ChatGPT and Codex use a folder you choose.
 
-One good long asset contains four to six posts. Most people extract one and
-throw the rest away.
+One good long asset contains a pillar and its derivatives: 5-7
+standalone text posts, plus a carousel, a poll question, a personal
+story, and a contrarian take. Most people extract one and throw the
+rest away.
 
 ## Input
 
@@ -42,14 +44,34 @@ thin too. Say that.
 
 ## Then build the week
 
+Use the AuthoredUp "Create Once, Publish Five" framework. One pillar
+(a 2,000-word post, blog, or video) becomes 5-7 standalone insights
+as text posts, 1 step-by-step carousel, 1 central question as a poll,
+1 personal story, and 1 contrarian take. Each derivative uses a
+different format, angle, and hook, and each must pass the standalone
+test below.
+
 Each extract becomes one post, and each post has to stand completely on its
 own - the reader has not seen the video and never will. Never write "as I
 mentioned in my latest video". The post is the thing.
 
+**Standalone test:** each derivative must make sense with no knowledge
+of the anchor. If it needs the anchor to make sense, it is a teaser,
+not a post. Rewrite it until it stands alone, or drop it.
+
+**Spacing:** space derivatives 3+ days apart. Do not publish them on
+consecutive days: five posts from one source in one week reads as a
+content mill, even when each one stands alone. Spread one pillar
+across two weeks or more.
+
+**Article-post loop:** expand a high-engagement post into an article,
+then extract 5-10 posts from the article. A post that already earned
+engagement is a proven anchor, so mine it before starting a new one.
+
 Assign a hook formula from `sp-post/hooks.json` to each, and vary them: five
 posts from one source with the same hook shape reads as a content mill.
 
-Order them across the week so the strongest claim goes first, the story goes
+Order them across the weeks so the strongest claim goes first, the story goes
 midweek, and the mechanism post goes last, when people who liked the earlier
 ones are watching for it.
 
@@ -60,10 +82,10 @@ SOURCE: "Why we killed discovery calls" (18 min, 3,400 words)
 
 FOUND  4 claims, 6 numbers, 2 stories, 3 mechanisms, 1 mistake, 5 quotable lines
 
-WEEK
+WEEK 1-2 (derivatives spaced 3+ days apart)
 TUE  #1  Contrarian    Discovery calls are a tax you pay for a bad website
-WED  #17 Time Anchor   We got 6 hours a week back by deleting one calendar link
-THU  #9  Cold Open     "Can we just hop on a quick call?"
+FRI  #17 Time Anchor   We got 6 hours a week back by deleting one calendar link
+TUE  #9  Cold Open     "Can we just hop on a quick call?"
 FRI  #21 Direct Value  The 4-question form that replaced the call. Steal it.
 
 Say "write Tuesday" and I will draft it.

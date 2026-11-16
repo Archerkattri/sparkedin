@@ -2,8 +2,8 @@
 name: sp-post
 license: MIT
 description: >-
-  Write a LinkedIn post from a raw idea using 21 proven hook formulas, in the
-  user's own voice, humanized so it does not read as AI. Also builds document
+  Write a LinkedIn post from a raw idea using 21 hook formulas, ranked by
+  2026 evidence, in the user's own voice, humanized so it does not read as AI. Also builds document
   posts (carousels) as slide-by-slide copy and a PDF. Use whenever the user
   wants a LinkedIn post, a hook, a draft for the feed, "post about X", "turn
   this into a LinkedIn post", "carousel", "document post", "slides for
@@ -36,7 +36,29 @@ idea is, not by habit.
 
 ## The shape
 
-LinkedIn rewards dwell time, saves and comments, in that order. So:
+What the March 2026 feed rebuild changed: LinkedIn replaced five
+retrieval pipelines with one unified LLM dual-encoder retrieval plus a
+Generative Recommender transformer that reads 1,000+ past interactions
+as a sequence (LinkedIn Engineering, 12 Mar 2026). Topic consistency
+now matters, because retrieval reads meaning, not keywords. Never
+teach 360Brew as the live algorithm: it is a withdrawn arXiv paper,
+never named in LinkedIn's March 2026 post.
+
+LinkedIn names dwell time, saves, comments, likes and shares as
+ranking signals. No exact weights are published, so never quote a
+weight, a dwell threshold, or a "Depth Score" formula. Those are vendor
+inventions, not LinkedIn publications.
+
+Hook ranking, by median engagement rate (AuthoredUp, 309,614 posts,
+Dec 2025 to May 2026): story 2.60%, contrarian 2.31%, statement
+2.27%, results 2.19%, question 2.16% last. Question hooks are also
+the worst opener in a second large dataset (MagicPost, 1.18M posts:
+19 median likes for a question first line vs 29 for a non-question).
+Keep the hook to 0-40 characters: 2.61% median engagement at 0-40
+chars, falling to 2.08% at 200+ chars. A first-person first line
+("I", "my", "we") lifts reactions 19% within-creator (Flypost,
+116,000+ posts). Lead with a lived story or a specific first-person
+claim, not a question.
 
 ```
 Line 1     the hook. Alone. It has to survive truncation at ~140 chars mobile.
@@ -44,18 +66,34 @@ Line 2     the payoff of line 1, not setup for line 3.
 Body       short paragraphs, 1-3 lines each, blank line between every one.
            No wall. The white space is the format.
 The turn   one line that reframes what came before.
-Close      one specific question, or one instruction. Never both.
+Close      one specific instruction, or one specific question only this
+           post could ask. Never both. Prefer the instruction: ending
+           with a question measured -7% in Flypost, and only +0.07pp
+           median in AuthoredUp, so a question is a nudge, not a driver.
 ```
 
-Length: 900-1,300 characters is the working range for a text post. Under 400
-reads as a thought, not a post. Over 2,000 needs to earn every line, and the
-"see more" tap has to be paid for by line 2.
+Attach an image by default: a screenshot, chart, or photo lifts
+reactions 35% within-creator (Flypost). Image is the most reliable
+format lift; video is +15% and carousel +11% within-creator, well
+below the cross-sectional figures that compare different authors.
+
+Length: 800-2,000 characters is the working range for a text post.
+Under 400 reads as a thought, not a post. Long posts beat short ones
+when they have proof: over 2,000 chars measured 2.56% median
+engagement vs 1.53% under 200 chars (Taplio, 219,456 posts), and
+1,500+ chars measured +14% vs under 500 chars within-creator
+(Flypost). Go long when you have proof. Never pad to reach a length,
+and there is no 1,300-character sweet spot: no dataset contains that
+figure.
 
 ## The loop
 
 **1. Pick three hooks, not one.** Run the idea through `hooks.json` and choose
 the three formulas that genuinely fit it. Different formulas, not three
-variations of one. Show them as three numbered lines and say which you would
+variations of one. Rank them by the evidence in the shape section above:
+story and contrarian first, statement and results next, question hooks
+last and only when the question is specific enough that only this
+person could ask it. Show them as three numbered lines and say which you would
 ship and why, in one sentence.
 
 **2. Draft the full post** on the strongest hook.
@@ -95,6 +133,13 @@ idea is one claim. Splitting one claim across eight slides is the most common
 way carousels fail, and if that is what the user has, say so and write a
 text post instead.
 
+Format performance depends on the denominator, so never quote one
+ranking. Cross-sectionally (Socialinsider, 1.3M company-page posts),
+documents lead at 7.00% engagement, ahead of multi-image 6.45% and
+video 6.00%. Within-creator (Flypost), a carousel lifts reactions
+only +11%, behind image +35% and video +15%. Teach both numbers with
+their denominators, never one table.
+
 ### Structure
 
 8-12 slides. Under 8 is a text post. Over 12 and the completion rate falls off
@@ -106,13 +151,17 @@ a cliff.
 3-N      ONE IDEA PER SLIDE. A headline of 3-7 words, and at most 25 words
                     under it. If a slide needs a paragraph, it is two slides.
 N+1      RECAP      the whole thing as a list, so the screenshot is useful
-LAST     CTA        one action. Follow, comment a keyword, or the link. One.
+LAST     CTA        one action. Follow, or the link. One. Never "comment a
+                    keyword": that bait measured +13% before July 2026 and
+                    -24% since, and it is dead.
 ```
 
 ### Slide copy rules
 
-- **Slide 1 is 80% of the result.** Six words. Big. The rest of the deck
-  cannot save a cover nobody swipes.
+- **Slide 1 is about 70% of the result.** Six words. Big. The rest of the deck
+  cannot save a cover nobody swipes. That 70% figure is a vendor estimate
+  (EcomGhosts), not a LinkedIn measurement, so quote it as such. Make the
+  cover outcome-led with a specific number or benefit, not a vague title.
 - **Number every slide** (3/10). Completion goes up when people can see the
   end.
 - **No slide is a paragraph.** If you cannot say it in 25 words, split it.
@@ -151,11 +200,31 @@ says go.
 - **Numbers over adjectives.** "$4,200" beats "a lot". If the user has not
   given you a number, ask for one rather than writing around the hole.
 - **No engagement bait.** "Thoughts?" and "Agree?" are dead. The closing
-  question has to be one only this post could ask.
-- **Three hashtags maximum**, at the bottom, and only if they are real
-  categories someone follows.
-- **No links in the post body.** LinkedIn suppresses posts with outbound
-  links. Put the link in the first comment and say so in the receipt.
+  question has to be one only this post could ask. Never write
+  "Comment KEYWORD to get it": that bait is dead since July 2026
+  (Flypost: +13% before July, -24% since). Never write a generic AI
+  listicle with no lived detail: LinkedIn's slop crackdown dates to
+  May 2026 (generic AI content less likely to be distributed beyond
+  the immediate network), July 2026 ("Seems like AI slop" flag), and
+  September 2026 (LinkedIn's own claim, no published method, that
+  views of classified slop fell 40%). LinkedIn's "94% classifier"
+  figure is also LinkedIn's own claim with no published method.
+  Flag vendor and LinkedIn claims as claims, never as measured fact.
+- **Zero hashtags, or 1-2 at most**, at the bottom, and only if they are real
+  categories someone follows. Never 3-5: Flypost measured 1-2 hashtags
+  as no change, 3-5 as -8%, and 6+ as -6%. Hashtag matching no longer
+  drives retrieval after the March 2026 LLM rebuild.
+- **A link in the body is a cost, not a ban.** It measured -11 to -13%
+  reactions within-creator (Flypost) and -18.8% median reach in a
+  second dataset, so use it when the link is the point and accept the
+  cost, or put the link where the reader can still find it and say so
+  in the receipt. Putting the link in the first comment is unproven
+  lore, not a LinkedIn rule, so never present it as a workaround that
+  dodges the cost.
+- **Judge a post at 48-72 hours**, on engagement rate plus profile
+  views and followers gained from the post, not on impressions alone.
+  About 40% of interactions land on day 1 and about 50% of lifetime
+  impressions within the first 2 days, so an early read misleads.
 - **Never fabricate.** No invented metrics, clients, revenue figures or
   outcomes under the user's name, even as a placeholder. If a number is
   needed and unknown, leave `{{your number}}` in the draft and flag it.

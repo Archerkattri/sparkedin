@@ -16,8 +16,11 @@ description: >-
 Profile directory: `<profile>` holds voice.md, log.md, plan.md and analytics.md. Muse uses `~/workspace/linkedin/`, Claude Code uses `~/.claude/linkedin/`, ChatGPT and Codex use a folder you choose.
 
 A profile is not a resume. A resume answers "what have you done". A profile
-answers "should I message this person", and it answers it in about four
-seconds, from the headline and the first two lines of the about.
+answers "should I message this person", and it answers it fast, from the
+headline and the first two lines of the about. Do not quote a skim time
+for this: the often cited 6 second figure comes from a 2018 Ladders
+eye-tracking study of resumes, not LinkedIn profiles, so it is not a
+LinkedIn finding.
 
 ## Input
 
@@ -34,7 +37,10 @@ score only after access comes back and the live profile can be read.
 ## Score it
 
 Read `rubric.json` in this folder. Twelve items, 100 points, each with what
-full marks looks like. Score every item you actually saw, show the table,
+full marks looks like. That score is this skill's own rubric, not a
+LinkedIn score: LinkedIn no longer surfaces an All-Star meter or any
+profile completeness score, so never present the total as LinkedIn's.
+Score every item you actually saw, show the table,
 and give the total. Be honest - most profiles land in the 30s and 40s on
 the first pass, and a generous score is useless.
 
@@ -60,30 +66,71 @@ PROFILE SCORE  41/100
 Fix in descending order of points lost. Do not rewrite everything at once -
 the user has to actually paste each of these in.
 
-**1. Headline (220 characters).** The formula that works:
-`{what you do for whom} | {proof} | {how to start}`. Not your job title. Not
-"Helping X do Y" as the first three words, which every second profile now
-opens with. Give three options.
+**1. Headline (220 characters max).** The formula that works:
+`{target title recruiters type} | {2-3 core skills in LinkedIn taxonomy} | {1 specific proof}`.
+Use the market wording of the title, not an internal title, and no
+adjectives like "passionate", "results-driven", or "strategic thinker".
+Give three options. Do not quote headline search-weight figures such as
+"3x" or "40%": those weights are unverified vendor figures, and the
+direction only is that the headline is the heaviest-weighted search field.
 
 **2. About, first two lines.** Everything after line 2 is behind "see more" on
 mobile, so those two lines are the whole about section for most readers. They
-must state who you help and what changes. No "passionate", no "results-driven",
+must state the role wanted plus the strongest proof. No "passionate", no "results-driven",
 no third-person bio, no opening with your own name.
 
-**3. About body.** Written to one reader, in the second person. Structure:
-the problem they have, what you do about it, one piece of proof with a number,
-what to do next. Under 1,400 characters even though the limit is 2,600.
+**3. About body.** First person, 150 to 300 words total. Structure:
+the role, level, and focus plus what you want next; 2 to 3 concrete
+achievements with numbers; a skills and tools line using the job
+description terms once, in context, with proof; then a call to action
+with role type, location or remote, and how to reach you. Do not
+keyword-stuff the About: since the March 2026 feed rebuild, LinkedIn
+retrieval reads meaning, so repeated job description terms with no proof
+read as slop and risk the generic-content classifier.
 
-**4. Featured.** Use the full method in the section below: top 3 to 6 items
+**4. Featured.** Use the full method in the section below: top 3 to 5 items
 from real performance, mixed types, best first. An empty featured section is
-eight points and the only place on the profile you fully control.
+eight points and the only place on the profile you fully control. No
+measured conversion data exists for Featured order or count, so 3 to 5
+is practitioner consensus, not evidence.
 
 **5. Experience.** Each role gets one line of scope and two to three bullets
-that are outcomes with numbers, not duties. Cut anything older than ten years
+that are outcomes with numbers, not duties. Each bullet names the system,
+states the scope, and carries a number. Use titles in market wording
+and keep titles and dates aligned with the resume the user sends:
+a mismatch is a trust killer. Cut anything older than ten years
 to a single line.
 
-**6. Banner.** One sentence of positioning and one way to reach you. The
+**6. Skills.** List 35 to 50 skills, spelled as LinkedIn's own taxonomy
+spells them ("Power BI", not "PowerBi dashboards"). The cap is 100, but
+the useful range is 35 to 50: above that the list dilutes. Pin the top 3
+and get 10 or more endorsements on the top 3 to 5. Endorsements are a
+weak, logarithmic signal: 0 to 10 matters, 50 to 200 adds about nothing.
+Do not teach "5+ skills = 17x more views" as fact: it is an old LinkedIn
+claim with no published method, so flag it as a vendor claim if it comes
+up at all.
+
+**7. Recommendations.** Two to three specific, recent recommendations
+from a direct manager outweigh 99 or more endorsements for human trust,
+because a recruiter can quote them. A good one names a specific outcome,
+not character. The skill may describe what makes a good recommendation
+when the user already has one, but it never drafts or sends a
+recommendation request: never ask anyone for a LinkedIn recommendation
+unless the user specifically requests it.
+
+**8. Banner.** One sentence of positioning and one way to reach you. The
 default blue gradient is the clearest signal on the page that nobody is home.
+
+**9. Open to Work.** Recruiters-only if employed, public (green frame) if
+openly hunting. Set titles, locations, and job types on purpose, and
+keep replying to InMails.
+
+**10. Follow or Connect primary.** Set Follow as the primary button only
+if the user posts weekly; otherwise keep Connect primary. The setting
+is under Settings and Privacy, Visibility, Followers. Do not tell the
+user to turn on Creator Mode: that toggle was removed in March 2024 and
+its features (Follow-primary, newsletters, Live, analytics) are
+default-on for every profile.
 
 ## Featured: what to pin
 
@@ -99,8 +146,10 @@ connections-only even when featured.
 **1. Pick from performance, not from pride.** Read
 `<profile>/analytics.md` if it exists, or the output of `/sp-audit` or
 `/sp-analytics`. Rank the user's posts by engagement rate and reach, not
-by raw impressions. Pick the top 3 to 6. A post the user loves that nobody
+by raw impressions. Pick the top 3 to 5. A post the user loves that nobody
 read does not go in Featured. A post that earned real comments does.
+No measured conversion data exists for Featured order or count, so
+3 to 5, best first, is practitioner consensus, not evidence.
 
 **2. Mix the types.** A good Featured section is not six posts. Aim for a
 mix across these four, in this order:
@@ -154,15 +203,23 @@ type, that goes in. If not, the description says what the work is and
 stops there.
 
 **3. Set the rate range honestly.** A range the user would actually accept,
-not an aspirational one. If the user does not want rates public, say so and
-leave the rate out. A wrong rate costs more than no rate: it filters out
-the right client and attracts the wrong one.
+not an aspirational one. If the user does not want rates public, use
+"Contact for pricing" and leave the rate out. A wrong rate costs more than no rate: it filters out
+the right client and attracts the wrong one. No published inquiry or
+conversion benchmarks exist for Services, so do not promise a volume
+from any rate choice.
 
 **4. Set location and remote.** On-site, remote, or both, as the user
 actually works. Do not claim remote for work that needs the user's hands
 on hardware.
 
-**5. Warn before setup.** Management type, personal or Company Page,
+**5. Reply fast and invite reviews.** Reply within 24 hours: LinkedIn
+shows a "usually responds within 24 hours" badge if the user replies
+within a day to at least 80% of inquiries. Invite up to 20 past clients
+to review the page. The mechanics are verified; conversion from either
+is unmeasured, so do not promise it.
+
+**6. Warn before setup.** Management type, personal or Company Page,
 **cannot be changed after setup.** Ask the user which one they want, once,
 before anything is created. Then the user creates it in the browser.
 
@@ -176,6 +233,13 @@ before anything is created. Then the user creates it in the browser.
 - **Never fabricate.** No invented metrics in a title, no invented
   clients in a Services description, no invented rate the user would not
   take.
+- **Never draft or send a recommendation request** unless the user
+  specifically asks for one.
+- **Do not teach dropped myths as fact.** No "turn on Creator Mode"
+  (toggle gone March 2024), no "5+ skills = 17x more views", no
+  headline search-weight percentages, no keyword-stuffed About, and no
+  All-Star meter. Where the evidence is only practitioner consensus or
+  a vendor claim, say so.
 - **Keep it current.** A Featured section older than a quarter is stale.
   Say so when it is, and offer the re-rank.
 

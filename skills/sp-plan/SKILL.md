@@ -22,17 +22,25 @@ should not repeat a theme from the last fortnight. If they do not exist, ask
 for four things and write them down:
 
 1. What the user sells, and to whom.
-2. The three or four themes they want to be known for.
+2. The two or three themes they want to be known for. Topic
+   consistency drives LLM-retrieval relevance after the March 2026
+   feed rebuild, so keep the list to 2-3 topics, not four or five.
 3. What actually happened this week - a client call, a number, a mistake, a
    thing they built, an argument they had. This is where posts come from.
 4. Ten to twenty people or companies worth being visible to.
 
 ## What to post
 
-Four posts a week beats seven. Consistency is a floor, not a target, and the
-fifth post of a week is almost always the weak one that drags the average.
+Post 2-5 times a week (Buffer, 2M+ posts, 94,000+ accounts:
+2-5/week measured +1,182 impressions per post and +0.23pp
+engagement vs 1/week). 1/week leaves growth on the table. 4 posts a
+week is a good default for a job seeker or builder: consistency is a
+floor, not a target, and quality is the constraint, since per-post
+likes fall as pace rises even while the weekly total rises. Do not
+pad a fifth post that has nothing specific to say.
 
-Mix across the week, never two of the same type back to back:
+Mix across the week, never two of the same type back to back, and
+stay inside the same 2-3 topics all week:
 
 | type | share | job |
 | --- | --- | --- |
@@ -49,17 +57,26 @@ because our AI draft had an em dash in it" is a post.
 
 ## When to post
 
-Post when the user's audience is at a desk. For a B2B audience in one
-timezone, Tuesday to Thursday, 7:30-9:30am local, is the working default, with
-Monday afternoon and Friday morning as the second tier. Weekends are for
-personal-story posts or nothing.
+There is no magic hour and no magic day. Three million-post datasets
+disagree (Sprout, Hootsuite, Buffer give three different answers),
+Flypost found the day of the week makes no change, and one smaller
+dataset found Monday and Sunday best and Thursday worst, which is
+noise, not signal. Post when the user's audience is awake, at a
+consistent slot they can hold every week, and anchor the times to
+their audience's timezone, not the user's, if those differ. Weekends
+are for personal-story posts or nothing.
 
-But state this plainly: **the day and hour matter far less than whether the
+State this plainly: **the day and hour matter far less than whether the
 first line is good.** If the user is optimising posting times before their
 hooks work, they are polishing the wrong thing, and you should say so.
 
-Anchor the times to their audience's timezone, not the user's, if those
-differ.
+## A realistic weekly plan (synthesis, not a measured outcome)
+
+The plan below is a synthesis of the cadence, mix, and engagement
+rules in this skill, not a measured outcome. Label it as such when
+you show it. It assumes 2-3 hours a week: 2-5 posts, 20 minutes a
+day engaging with 3-5 target accounts, and 1 poll per month
+maximum, never weekly.
 
 ## Who to engage with
 
@@ -75,6 +92,9 @@ Build a list of 10, split three ways:
 are what makes the user's own post land.
 
 ## Output
+
+The times below are consistent slots the user can hold, not best
+hours: no dataset supports a best hour, so pick a slot and keep it.
 
 ```
 WEEK OF SEP 8

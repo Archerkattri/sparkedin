@@ -33,8 +33,10 @@ hook formula each post used.
 ## What to actually measure
 
 Raw impressions are the least useful number on the page, because they are
-mostly a function of how many people already follow the user. Compute these
-instead, and show the working:
+mostly a function of how many people already follow the user, and because
+impressions count displays, including repeats, not people. Members
+reached is the audience proxy. Never equate impressions with reach.
+Compute these instead, and show the working:
 
 | metric | how | what it tells you |
 | --- | --- | --- |
@@ -43,8 +45,14 @@ instead, and show the working:
 | **Reach multiple** | impressions / follower count | whether it travelled past the existing audience |
 | **Save/send rate** | if available | the strongest single predictor of future reach |
 
-Rank by engagement rate and reach multiple, not impressions. A post with 900
+Rank by engagement rate and reach multiple, not impressions, and rank by
+each separately. A post can top one and bottom the other. A post with 900
 impressions and 40 comments beat the one with 12,000 impressions and 6.
+Use medians, not means, and exclude viral outliers when you set a
+baseline. AuthoredUp excludes posts above 10% engagement when
+benchmarking, for the same reason. Filter out posts under 100
+impressions before ranking: an engagement rate on a tiny-impression post
+is noise.
 
 ## From sp-stats JSON
 
@@ -86,6 +94,39 @@ them, and be willing to conclude something the user will not like:
 State the finding as a claim with the evidence attached, and say how confident
 it is. With 30 posts you can see a pattern; with 6 you cannot, and you should
 say that instead of inventing one.
+
+## The audit framework
+
+Collect the last 20 to 50 posts with impressions, reactions, comments,
+reposts, saves, profile views, followers gained, format, length, hook
+style, and topic. Rank by engagement rate and by reach multiple
+separately. Tag every post by topic, format, and hook. Then decide:
+
+- **Double down:** top quartile on both engagement rate and reach
+  multiple.
+- **Fix:** high reach, low engagement. That is a hook or body mismatch:
+  the post travelled but did not earn a response.
+- **Retire:** low on both, twice running.
+
+Re-run monthly, not after one viral post. One viral post is an outlier,
+not a strategy.
+
+Traps to check before you decide anything:
+
+- Impressions versus reach, above. Rank on members reached where you
+  have it, never on impressions alone.
+- Repost attribution. A repost's engagement accrues to the repost, not
+  to the original, in most dashboards. Rank originals only.
+- Cross-format comparisons without within-author controls measure who
+  uses the format, not the format. Compare a format against your own
+  posts in other formats, same author, same period.
+- Engagement rate on a post under 100 impressions is noise. Filter it
+  out before ranking.
+
+Decisions an audit drives: which 2 to 3 topics to keep, which format is
+the weekly anchor, which hook style your audience rewards, what to
+repurpose (top-decile posts become carousels or articles), and what to
+stop.
 
 ## Output
 

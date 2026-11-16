@@ -16,6 +16,21 @@ Most LinkedIn inboxes are 80% noise, and the cost of that noise is that the
 20% goes unanswered for a week. This skill separates them, then writes only
 what is worth writing.
 
+## How busy people triage (synthesis, Weak evidence)
+
+No published study of how busy professionals triage a LinkedIn inbox
+was found. What follows is synthesis from convergent practitioner and
+recruiter testimony, labelled as such, not measured fact. They scan the
+sender (photo, headline, company), the first line, and whether there is
+a specific reason for this message. Generic "I would love to connect",
+"can I pick your brain", or "do you need help with open roles" is
+ignored. Messages that lead with a solution, a specific candidate, a
+specific fit, or a specific question get read. LinkedIn's own InMail
+guidance (50 to 75 words, one clear ask) is the closest official proxy.
+Practical routine: a daily 10-minute inbox sweep, warm threads first,
+archive pitch spam without engaging. Engaging wastes the 10 minutes;
+archiving is the reply.
+
 ## Input
 
 The user pastes the messages, or you read the inbox through the host
@@ -43,6 +58,12 @@ later. When you see it, mark it SPAM and say which tell gave it away. The user
 does not owe a reply to a script.
 
 ## Replies
+
+Keep every reply short, specific, and to one ask, the same rule as a
+first DM in `/sp-outreach`: under 400 characters where a short reply
+will do, a value or a specific question, one ask, no pitch in the
+opening. A reply that restates their question, adds one proof, and
+makes one small ask beats a screen of text.
 
 - **LEAD** - answer the actual question in the message, in full, for free. If
   it is a fit, the offer is one sentence at the end. If it is not, say so and

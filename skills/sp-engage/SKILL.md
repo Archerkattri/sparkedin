@@ -27,7 +27,14 @@ host's own approval flow is the gate.
 Commenting is the highest-leverage thing on LinkedIn and the easiest to do
 badly. A comment on a post with 400 reactions gets seen by more people than
 most of your own posts. A generic one gets seen by nobody and costs you
-credibility with the author.
+credibility with the author. Commenting on others' posts is the fastest
+growth channel for small accounts: it borrows their audience, and
+LinkedIn now shows impressions for comments, so a comment is a
+micro-post. But generic comments are now a spam and slop signal, not
+a growth tactic. LinkedIn banned engagement pods in March 2026:
+agreeing in advance to like or re-share each other's content is
+prohibited, pod groups get removed, and members are warned of
+restrictions. Never join, run, or teach a pod.
 
 ### Input
 
@@ -53,16 +60,25 @@ Pick by what the post actually is. Never default to type 1.
 
 ### Rules
 
+- **Substantive and specific, 15+ words.** Add a perspective, a
+  disagreement, an example, or a question. A comment that could sit
+  under any post on the topic is noise, and generic praise is now a
+  spam and slop signal. 3-5 substantive comments beat 10 generic ones.
 - **2 to 4 sentences.** Longer reads as a hijack. Shorter reads as filler.
+  The one-liner type below is the only exception, and it is for
+  presence, not growth.
 - **Never open with "Great post"**, "Love this", "So true", "Couldn't agree
   more", "This resonates", or the author's first name followed by an
-  exclamation mark. All six are invisible.
+  exclamation mark. All six are invisible, and generic praise now
+  reads as slop.
 - **No emoji openers.** No 🔥 or 👏 as a first character.
 - **Never restate the post.** The author knows what they wrote and so does
   everyone reading.
 - **One idea.** A comment with two points reads as a blog attempt.
 - **Say the specific thing.** If the comment could sit under any post on the
   topic, it is not a comment, it is noise.
+- **No engagement bait.** Never write "Comment KEYWORD" or any
+  comment-for-link bait. That bait is dead since July 2026.
 - **Disagreement is allowed and works**, but the agreement has to come first
   and be real.
 
@@ -101,8 +117,15 @@ visible and it looks like what it is.
 ## Part B. Replies under your own posts
 
 The reply thread under your own post is where reach is actually decided. Every
-reply is a second engagement event on the post, and the first hour of replies
-does most of the work. But the value is not equal across comments, so this
+reply is a second engagement event on the post. Reply to every
+substantive comment within hours, with a follow-up question where
+natural: each reply can turn 1 comment into 3, and threads beat
+isolated comments. Do not quote a first-hour reply boost percentage:
+figures such as "reply within 60 minutes = +35% visibility" are
+unverified vendor claims, so this skill teaches timing as "within
+hours", not as a measured lift. Do not teach "do not edit in the
+first hour" as fact either: the claimed distribution reset is
+practitioner lore, unverified, so leave it out. But the value is not equal across comments, so this
 skill sorts before it writes.
 
 ### Input

@@ -21,6 +21,21 @@ description: >-
 Own account only. Your own posts, your own engagement, read from your own
 Chrome session. Nothing here touches anyone else's data.
 
+There is no official API route for personal post analytics. The
+`r_member_social` permission is closed: LinkedIn is not accepting
+requests. That is why no tool can pull your personal post analytics
+through the API, and why this skill replays LinkedIn's own internal
+Voyager API from your logged-in browser session instead. Tools that claim
+API access to personal analytics are using extensions, scraping, or the
+member's own pasted data.
+
+Note on API versions: this skill does not use LinkedIn's official Posts
+API (`/rest/posts`), so the Posts API versioning rules do not apply to
+these endpoints. The research report says version 202511 sunsets
+16 Nov 2026 and does not confirm a current version to replace it. Do not
+guess a version string. If a future step needs the official Share API,
+check Microsoft Learn for the current version first.
+
 ## 0. Confirm before the full scrape
 
 A full history is about 2,600 requests and about 2 hours. Say that to the

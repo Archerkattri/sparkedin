@@ -60,6 +60,11 @@ came from.
 
 A GUESS is a weaker send than a PUBLISHED address. Say so when you present
 it, and let the user decide. Never present a GUESS as if it were verified.
+Verify a pattern-guessed address before sending, and drop catch-all
+domains and role addresses (info@, careers@, and similar) outright:
+they are not a person, and a send to one is not a send to the target.
+No published bounce rate specifically for pattern-guessed job-seeker
+emails was found, so do not quote one.
 
 ### Staleness checks
 
@@ -97,6 +102,43 @@ suggestions.
 - **Never withdraw a LinkedIn invite.** That rule lives on the LinkedIn
   side, but it is part of the same outreach. An invite that went out stays
   out.
+
+## 2B. Deliverability and legal (read before sending)
+
+**Deliverability.** SPF, DKIM, and DMARC authentication matter: the
+sender domain should pass SPF and DKIM with DMARC aligned (p=none
+minimum). Spam complaints target under 0.1%, with 0.3% as the hard
+line. Bounces under 2% is good. Those complaint and bounce figures are
+sequencer norms, not provider-published thresholds: no provider
+publishes a bounce threshold. For a job seeker sending under 50 emails
+a day, the bulk-sender threshold (5,000 or more a day to personal
+accounts) does not apply, and a personal Gmail address is fine. Do not
+buy a cold-email sequencer for a job search, and do not warm up
+secondary domains or extra inboxes: that is bulk-sender practice, not
+job-seeker practice.
+
+**Legal: general information, NOT legal advice.** The rules depend on
+where the recipient is, not where the sender is.
+
+- US (CAN-SPAM): opt-out model, no prior consent needed. Honest
+  headers and subject, a physical postal address, and an opt-out
+  honoured within 10 business days.
+- EU (GDPR plus national ePrivacy): lawful basis, usually documented
+  legitimate interest with a 3-part test. Germany requires prior
+  express consent for B2B email. France allows opt-out.
+- UK (PECR plus UK GDPR): corporate subscribers can be emailed without
+  consent (identify yourself, offer an opt-out). Sole traders and
+  partnerships need consent.
+- Canada (CASL): consent first. Implied consent can cover a
+  conspicuously published business address where the message fits the
+  role, but the sender must be able to prove consent.
+
+One-to-one email to a named hiring manager about a specific role, from
+a personal address, with a clear opt-out and no bulk list, is the
+lowest-risk form of cold email in every regime. Even so, CASL and
+Germany still technically require consent, so prefer LinkedIn for
+Canada and Germany first contacts. When in doubt, check local law and
+do not send.
 
 ## 3. Write the email
 

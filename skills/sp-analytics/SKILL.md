@@ -19,15 +19,27 @@ analytics.md. Muse uses `~/workspace/linkedin/`, Claude Code uses
 
 Turns numbers the user pastes from LinkedIn into a journal, a trend, and a
 decision. There is no API for personal-profile analytics. The
-`r_member_social` permission is closed to new requests, and the statistics
-endpoints that exist cover a Company Page's posts only. Any tool that
-claims to pull a personal profile's analytics automatically is either
-reading the logged-in browser session or inventing the numbers. This skill
-does neither. The user pastes the numbers, the skill does the math.
+`r_member_social` permission is closed to new requests (LinkedIn is not
+accepting requests), and the statistics endpoints that exist cover a Company
+Page's posts only. Any tool that claims to pull a personal profile's
+analytics automatically is either reading the logged-in browser session or
+inventing the numbers. This skill does neither. The user pastes the numbers,
+the skill does the math.
+
+Native analytics are free and short-windowed, so the journal is the only
+durable history. Combined post and audience analytics cover 7 to 365 days.
+For a single post, discovery and social counts cover 1,000 days, members
+reached covers 400 days, and demographics cover 180 days. Who viewed your
+profile covers 90 days free and 365 days on Premium. Paste weekly and
+export demographics quarterly, before the 180-day expiry, or the numbers
+are gone with no recovery. Shield, the deep-analytics standard, shut down
+in May 2026. Do not build on Shield or any extension-scraped history.
+Assume tools can disappear. The journal survives tool shutdowns and API
+closures.
 
 ## What to collect
 
-Ask the user to paste, once a week, from Profile, Analytics, and each
+Ask the user to paste, once a week, same day and time, from Profile, Analytics, and each
 post's View analytics screen. The journal lives in
 `<profile>/analytics.md`, one dated entry per week. Fields:
 
@@ -35,18 +47,29 @@ post's View analytics screen. The journal lives in
 
 - Search appearances, with the week they cover. LinkedIn refreshes these
   weekly, on Wednesdays.
-- Profile views, last 90 days. Free accounts see the 3 most recent
-  viewers by name. Premium sees the full list.
+- Profile views, last 90 days. Free accounts see only the last few named
+  viewers. Premium sees the full named list for 365 days, plus
+  custom-button clicks. Post analytics themselves are free for everyone.
+  Do not buy Premium for analytics alone. Never quote a single Premium
+  price; it varies by market and offer.
 - Followers, total and gained this week.
 
 **Per post:**
 
-- Impressions.
+- Impressions. Impressions are displays, including repeats, not people.
+  Members reached is the audience proxy. Never equate impressions with
+  reach.
 - In-network vs out-of-network split.
+- Members reached, where LinkedIn shows it.
 - Profile viewers gained from that post.
-- Followers gained from that post.
+- Followers gained from that post. This field exists natively since May
+  2025.
 - Reactions, comments, reposts.
 - Link clicks, where LinkedIn shows them.
+
+Judge a post at 48 to 72 hours, not in the first hours. Track
+followers-gained and profile-views-from-post as the outcomes that matter,
+not impressions.
 
 If a field is not shown for a post, leave it blank. A blank is honest.
 A zero is a claim. Never write zero where LinkedIn showed nothing.
@@ -84,7 +107,14 @@ posts by reach multiple and engagement rate, not by raw impressions. A
 post with 5,000 impressions to 1,200 followers did better than a post
 with 6,000 impressions to 5,000 followers. This is the same ranking
 `/sp-audit` uses. Use both skills together: this one keeps the numbers,
-that one ranks the history.
+that one ranks the history. Rank using medians, with viral outliers
+excluded. AuthoredUp excludes posts above 10% engagement when
+benchmarking, for the same reason. Compare a post to your own median for
+the same format over your last 20 posts, not to a platform average.
+Denominators differ by about 2x between sources: Taplio reports a personal
+median of 2.34% at 1,000 to 5,000 followers, while Socialinsider reports a
+company-page average of 5.20%. A single platform number cannot tell you
+whether your post did well.
 
 **3. AI vs human, within person.** The only honest comparison is the user
 against themselves. Tag each post in the journal as human-written,
@@ -96,10 +126,38 @@ same person's human posts, and completely-AI posts about 32 percent
 fewer. Those are other people's numbers. This journal produces the user's
 own number, which is the one that matters.
 
-**4. The monthly summary.** Once a month, read the four weekly entries
+**4. What the numbers cannot show.** Dwell time is not exposed to
+members. LinkedIn measures it; you infer it from length versus
+engagement, or from carousel completion as a behavioural proxy. Do not
+claim a dwell-time number for any post. There is also no published
+profile-view-to-message conversion benchmark. Track it yourself in the
+journal: profile views from a post, then DMs or messages in the following
+7 days. That is the only conversion number that belongs to this account.
+
+**5. The monthly summary.** Once a month, read the four weekly entries
 and write one paragraph: the trend, the best post and why, the worst post
 and why, and one thing to try next month. File it at the top of
 `analytics.md` so the newest summary is the first thing read.
+
+## Myths to drop
+
+- Impressions equal reach. They do not. Impressions count displays,
+  including repeats. Members reached is the audience proxy.
+- A 5% engagement rate is good for everyone. 5.20% is a company-page
+  average by impressions; the personal median is 2.34% at 1,000 to 5,000
+  followers. Compare a post to your own median.
+- Premium gives better content analytics. It does not. Post analytics are
+  free for all. Premium adds named viewers for 365 days and
+  custom-button clicks.
+- Any tool can pull your analytics through the API. It cannot.
+  `r_member_social` is closed. Tools use extensions, scraping, or your
+  own pasted data. Shield shut down in May 2026 for exactly this.
+- Dwell time is in your analytics. It is not exposed to members.
+- One viral post means the strategy works. Judge medians with outliers
+  excluded, at 48 to 72 hours.
+- More followers means more reach. Reach fell about 60% over two years
+  while many accounts grew followers. Topic relevance and recency now
+  gate distribution.
 
 ## How this fits with sp-stats
 
@@ -112,6 +170,9 @@ full pull is worth the cost.
 
 ## Rules that make the difference
 
+- **Impressions are displays, not people.** Members reached is the
+  audience proxy. Never rank by impressions alone, and never equate the
+  two.
 - **Never scrape analytics.** No reading the analytics pages through the
   browser session, no copying numbers the user did not paste. The user is
   the source. If they did not paste it, it is not in the journal.

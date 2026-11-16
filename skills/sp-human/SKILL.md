@@ -84,6 +84,17 @@ that changed the tool:
   tell), vary sentence length, cut filler, add specifics, write from an
   outline, and train on your own voice, even keeping your own bad habits
   for authenticity.
+- **LinkedIn content data (Nov 2026, same project).** Question hooks are
+  the worst opener in two large datasets: AuthoredUp, 309,614 posts, story
+  2.60% median engagement vs question 2.16% last; MagicPost, 1.18M posts,
+  question first line 19 vs 29 median likes. The tired generic results hook
+  ("How I gained 10,000 followers in 30 days") is a slop pattern unless it
+  carries a twist only the author could write. The slop crackdown is dated:
+  20 May 2026 LinkedIn "Keeping conversations real", 30 Jul 2026 "Seems
+  like AI slop" button with over 1M uses in two weeks, 15 Sep 2026 views of
+  classified slop down 40%. The "94% classifier" and "40% fewer views"
+  figures are LinkedIn's own claims with no published method, so cite them
+  as LinkedIn's figures, never as independent fact.
 
 ## House rules (hard, not suggestions)
 
@@ -147,6 +158,10 @@ a sentence needs judgement:
 - Rocket, fire, bulb, sparkle and dart emoji
 - Hashtag walls
 - Reflex engagement bait: "Thoughts?", "Agree?", "Who else?"
+- Tired generic results hooks with no twist: "How I gained 10,000
+  followers in 30 days", "How I 10x'd my pipeline" (question hooks are the
+  worst opener in the content data, so a hook like this needs a twist only
+  the author could write)
 - Uniform sentence length and uniform bullet length
 - Bold-first bullets (flagged as formatting provenance, not scored as
   authorship: markdown proves the text travelled through a chat interface,
