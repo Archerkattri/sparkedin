@@ -1,6 +1,6 @@
 {
-  "version": "1.0",
-  "note": "Lexicon used by humanize.py and detect.py. Replacements are plain-English and keep the sentence grammatical. Edit freely - it is meant to be yours.",
+  "version": "1.1",
+  "note": "Lexicon used by humanize.py and detect.py. Replacements are plain-English and keep the sentence grammatical. Edit freely - it is meant to be yours. Version 1.1 adds the house writing-guide rules: more slop words and phrases, plus structural tells for bold-first bullets, throat-clearing openers, credential openers and colon lectures.",
   "invisible": [
     {
       "cp": "U+200B",
@@ -550,6 +550,81 @@
       "find": "it is worth noting that",
       "replace": "note that",
       "family": "connectives"
+    },
+    {
+      "find": "intricate",
+      "replace": "complicated",
+      "family": "adjectives"
+    },
+    {
+      "find": "nuanced",
+      "replace": "subtle",
+      "family": "adjectives"
+    },
+    {
+      "find": "unleash",
+      "replace": "release",
+      "family": "verbs"
+    },
+    {
+      "find": "orchestrate",
+      "replace": "run",
+      "family": "verbs"
+    },
+    {
+      "find": "bolster",
+      "replace": "strengthen",
+      "family": "verbs"
+    },
+    {
+      "find": "catalyze",
+      "replace": "spark",
+      "family": "verbs"
+    },
+    {
+      "find": "demystify",
+      "replace": "explain",
+      "family": "verbs"
+    },
+    {
+      "find": "elucidate",
+      "replace": "explain",
+      "family": "verbs"
+    },
+    {
+      "find": "burgeon",
+      "replace": "grow",
+      "family": "verbs"
+    },
+    {
+      "find": "captivate",
+      "replace": "hold",
+      "family": "verbs"
+    },
+    {
+      "find": "compel",
+      "replace": "push",
+      "family": "verbs"
+    },
+    {
+      "find": "symphony",
+      "replace": "mix",
+      "family": "nouns"
+    },
+    {
+      "find": "impressively",
+      "replace": "",
+      "family": "adjectives"
+    },
+    {
+      "find": "noteworthy",
+      "replace": "notable",
+      "family": "adjectives"
+    },
+    {
+      "find": "commendable",
+      "replace": "good",
+      "family": "adjectives"
     }
   ],
   "phrases": [
@@ -712,6 +787,46 @@
       "find": "who's with me",
       "replace": "",
       "family": "closers"
+    },
+    {
+      "find": "it's important to note that",
+      "replace": "note that",
+      "family": "openers"
+    },
+    {
+      "find": "let's dive into",
+      "replace": "here's",
+      "family": "openers"
+    },
+    {
+      "find": "in terms of",
+      "replace": "about",
+      "family": "connectives"
+    },
+    {
+      "find": "in addition",
+      "replace": "also",
+      "family": "connectives"
+    },
+    {
+      "find": "and that's a good thing",
+      "replace": "",
+      "family": "closers"
+    },
+    {
+      "find": "in today's landscape",
+      "replace": "right now",
+      "family": "openers"
+    },
+    {
+      "find": "in today's world",
+      "replace": "right now",
+      "family": "openers"
+    },
+    {
+      "find": "it is important to note that",
+      "replace": "note that",
+      "family": "openers"
     }
   ],
   "structures": [
@@ -780,6 +895,30 @@
       "regex": "(?i)\\b(?:agree\\?|thoughts\\?|who else\\b|am i wrong\\?)\\s*$",
       "name": "Reflex engagement bait",
       "fix": "Ask a question only you could ask, about the specific thing above it."
+    },
+    {
+      "id": "bold-lead-bullets",
+      "regex": "(?m)^\\s*[-*\\u2022]\\s+\\*\\*[^*\\n]+\\*\\*:?",
+      "name": "Bold-first bullets",
+      "fix": "Drop the bold lead-in. Start with the fact."
+    },
+    {
+      "id": "throat-clearing",
+      "regex": "(?im)(?:^|[.!?]\\s+)(?:so|now|basically|essentially),",
+      "name": "Throat-clearing opener",
+      "fix": "Delete the opener. Start with the sentence."
+    },
+    {
+      "id": "as-role",
+      "regex": "(?im)^\\s*as (?:a|an|the) [^,\\n]{2,40},\\s*i\\b",
+      "name": "\"As a [role], I...\" credential opener",
+      "fix": "Drop the credential. Say the thing."
+    },
+    {
+      "id": "colon-lecture",
+      "regex": "(?i)\\b(?:here'?s the key point|the answer is simple|here'?s the bottom line)\\s*:",
+      "name": "Colon lecture",
+      "fix": "Weave it in instead of announcing it."
     }
   ]
 }

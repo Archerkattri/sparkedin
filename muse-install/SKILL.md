@@ -1,6 +1,6 @@
 # Sparkedin
 
-- Sparkedin is eleven LinkedIn skills that execute through your tools. Each one lives in its own file under `skills/` beside this file.
+- Sparkedin is thirteen LinkedIn skills that execute through your tools. Each one lives in its own file under `skills/` beside this file.
 
 - Match the user's request to one command below, read that command's `SKILL.md` first, then follow it. Never act from this router alone.
 
@@ -36,9 +36,13 @@
 
 - `/sp-dm` writes the invite note, the first message and the two follow-ups. Read `skills/sp-dm/SKILL.md`.
 
+- `/sp-outreach` runs a whole outreach campaign: picks the path first, then writes the note, the DM, the thank-you and the one follow-up, and tracks every target. Read `skills/sp-outreach/SKILL.md`.
+
 - `/sp-inbox` triages the LinkedIn inbox and drafts the replies worth sending. Read `skills/sp-inbox/SKILL.md`.
 
 - `/sp-audit` audits what the user already published and finds what worked. Read `skills/sp-audit/SKILL.md`.
+
+- `/sp-stats` pulls the user's own LinkedIn posts and engagement into local JSON and builds a dashboard. Experimental. Read `skills/sp-stats/SKILL.md`.
 
 ## Voice and profile
 

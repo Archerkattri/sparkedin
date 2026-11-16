@@ -12,6 +12,10 @@ It does not call their APIs and it cannot promise their verdict. It catches
 the things they all key on, which is why fixing them tends to move their
 numbers too - but the only honest claim is the one on this line.
 
+Hard rules from the house writing guide: any em dash fails FINGERPRINT and
+forces the verdict to FLAGGED; zero contractions caps VOICE at 35; zero
+numbers or names scores SPECIFICITY at 0.
+
 Each check returns a HUMAN score from 0 to 100. Higher is better.
 
 Usage
@@ -78,6 +82,9 @@ def check_specificity(text):
     per100 = 100 / len(w)
     hits = len(NUMBERS.findall(text)) + len(set(PROPER.findall(text)))
     density = hits * per100
+    if hits == 0:
+        # House rule: specific numbers and names are required, not nice to have.
+        return 0.0, "no numbers or names: add specific facts, figures or names"
     score = scale(density, human=6.0, machine=0.5)
     return score, f"{hits} concrete markers, {density:.1f} per 100 words (want 4+)"
 
@@ -112,9 +119,12 @@ def check_fingerprint(text):
     nbsp = sum(text.count(c) for c in "   ")
     total = invisible * 4 + em * 2 + curly + ellip + nbsp
     per1k = total * 1000 / max(len(text), 1)
-    score = scale(per1k, human=0.0, machine=12.0)
     detail = (f"{invisible} invisible, {em} em dash, {curly} curly quote, "
               f"{ellip} ellipsis, {nbsp} hard space")
+    if em:
+        # House rule: an em dash is a hard fail, not a deduction.
+        return 0.0, detail + " - em dash present, hard fail"
+    score = scale(per1k, human=0.0, machine=12.0)
     return score, detail
 
 
@@ -141,6 +151,10 @@ def check_voice(text, lex):
     score = (scale(contractions, human=3.0, machine=0.0) * 0.35
              + scale(person, human=8.0, machine=1.0) * 0.35
              + clamp(100 - tells * 22) * 0.30)
+    if contractions == 0:
+        # House rule: contractions are expected. Zero caps the check.
+        score = min(score, 35.0)
+        names.append("no-contractions")
     if uniform:
         score -= 12
         names.append("uniform-bullets")
@@ -166,6 +180,9 @@ def run(text, lex):
     overall = statistics.mean(scores) * 0.6 + min(scores) * 0.4
     verdict = "PASS" if overall >= 70 and min(scores) >= 55 else (
         "REVIEW" if overall >= 50 else "FLAGGED")
+    if "—" in text:
+        # House rule: any em dash is a hard fail on the verdict too.
+        verdict = "FLAGGED"
     return results, overall, verdict
 
 

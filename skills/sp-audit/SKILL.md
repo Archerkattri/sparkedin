@@ -21,6 +21,8 @@ user's own last 30 posts are the evidence.
 Ask for whichever the user has:
 
 - The post analytics export (LinkedIn: Analytics -> Content -> Export). CSV.
+- Or the `/sp-stats` JSON output: `data/posts.json`, `data/reactors.json`,
+  `data/commenters.json`, `data/meta.json`. See "From sp-stats JSON" below.
 - Or a screenshot per post with impressions, reactions, comments, reposts.
 - Or just the posts and their reaction counts, which is enough for a first
   pass.
@@ -43,6 +45,30 @@ instead, and show the working:
 
 Rank by engagement rate and reach multiple, not impressions. A post with 900
 impressions and 40 comments beat the one with 12,000 impressions and 6.
+
+## From sp-stats JSON
+
+`posts.json` carries one object per post: `id`, `ts` (epoch ms), `text`,
+`contentType`, `isReshare`, `likes`, `comments`, `reposts`, `impressions`
+(null when LinkedIn does not report it), `reactionTypes`, `threadUrn`,
+`url`, `actorName`. `reactors.json` and `commenters.json` carry who reacted
+and commented (`postId`, `name`, `publicId`, `occupation`, plus `type` for
+reactions and `ts`/`text` for comments). `meta.json` carries `scrapedAt`
+and the profile (`name`, `urn`, `followers`, `headline`).
+
+Rank originals only (`isReshare` false). Reposts carry the original
+author's counts, so ranking them with your own posts is a viral-outlier
+trap. Compute the same four metrics as above. Use `followers` from
+`meta.json` for the reach multiple. `reactors.json` and `commenters.json`
+also answer who your real audience is: the people who show up across
+many posts, and whether the user replies to them (compare the user's own
+comments in `commenters.json` against the posts other people commented on).
+
+Data-quality guard, before you rank anything: a 2024 or later original
+with 0 likes AND 0 comments AND null impressions is almost certainly a
+counts-join miss from the scrape, not a genuinely dead post. If more than
+5 posts trip it, say so loudly, leave them out of the bottom 5, and tell
+the user to re-fetch their post-level counts before trusting the audit.
 
 ## Then find the pattern
 

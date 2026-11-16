@@ -1,12 +1,13 @@
 # Sparkedin
 
-Eleven LinkedIn skills that do the work. Free, MIT, no signup, no API key,
+Thirteen LinkedIn skills that do the work. Free, MIT, no signup, no API key,
 nothing to connect.
 
 One of them writes your posts off 21 hook formulas. One comments on other
 people's posts. One handles the replies under yours. One scores your profile
 out of 100 and rewrites what lost points. One plans the week: what to post,
-when, and who to engage with.
+when, and who to engage with. One runs a whole outreach campaign, path first.
+One pulls your own stats into JSON and a dashboard.
 
 And one is the humanizer, which is the reason the rest are usable. It strips
 the em dashes, the slop vocabulary and the invisible watermark characters out
@@ -81,7 +82,7 @@ Voice, log and plan live in one profile directory, resolved per host:
 
 Skill files refer to it as `<profile>`.
 
-## The eleven
+## The thirteen
 
 | command | what it does |
 | --- | --- |
@@ -94,8 +95,10 @@ Skill files refer to it as `<profile>`.
 | `/sp-carousel` | Document posts. Slide-by-slide copy, the cover that earns the swipe, and the PDF to upload. |
 | `/sp-repurpose` | One video, newsletter or transcript into a week of posts that each stand alone. |
 | `/sp-dm` | The 200-character invite note, the first message, and the two follow-ups. Two. |
+| `/sp-outreach` | A whole outreach campaign. Picks the path first, then writes the note, the DM, the thank-you and the one follow-up, and tracks every target in `<profile>/outreach.md`. |
 | `/sp-inbox` | Triages the inbox into lead / recruiter / peer / ask / spam, and tells you which tell gave the sequence away. |
 | `/sp-audit` | Post-mortem on what you have already published. Ranks by engagement rate and reach multiple, not impressions. |
+| `/sp-stats` | Your own posts and engagement into local JSON, plus a dashboard. Experimental: LinkedIn internals change without notice. |
 
 ## The humanizer
 
@@ -116,11 +119,14 @@ python3 detect.py before.txt after.txt       # prove the delta
   are invisible in every editor you own.
 - **Typography.** Em dash to comma, en dash to hyphen, curly quotes to
   straight, ellipsis to three dots.
-- **The lexicon.** 113 stock words and phrases with plain-English
+- **The lexicon.** 136 stock words and phrases with plain-English
   replacements - delve, leverage, robust, seamless, crucial, testament to, "in
   today's fast-paced world", "let that sink in" - with capitalisation preserved
   and URLs untouched. It lives in
-  [`slop.json`](skills/sp-human/slop.json) and it is meant to be edited.
+  [`slop.json`](skills/sp-human/slop.json) and it is meant to be edited. The
+  house writing-guide rules are baked in: any em dash is a hard fail, zero
+  contractions caps the voice check, and a draft with no numbers or names
+  scores zero on specificity.
 
 **What gets flagged instead of fixed:** "It's not just X, it's Y", rule-of-three
 triads, one-word rhetorical questions, hashtag walls, reflex engagement bait,
@@ -170,10 +176,12 @@ your name. If a draft needs a number you have not given, it comes back with
 
 ```
 skills/sp-post/hooks.json        21 hook formulas: template, example, what it is for, how it gets ruined
-skills/sp-human/slop.json        the lexicon: 113 terms, 17 invisible classes, 11 structural tells
+skills/sp-human/slop.json        the lexicon: 136 terms, 17 invisible classes, 15 structural tells
 skills/sp-human/humanize.py      the three cleaning passes
-skills/sp-human/detect.py        the five-check panel
+skills/sp-human/detect.py        the five-check panel, with the house hard rules
 skills/sp-profile/rubric.json    the 100-point profile score
+skills/sp-outreach/              the campaign skill: path table, notes, DMs, thank-yous, tracker
+skills/sp-stats/                 the own-account stats scrape: posts, reactors, commenters, meta
 skills/sp-*/agents/openai.yaml   ChatGPT display name, starter prompt, invocation policy
 templates/voice.md               your voice profile. Fill this in first.
 muse-install/                    router skill for Muse custom-skills installs

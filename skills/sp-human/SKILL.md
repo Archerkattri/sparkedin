@@ -23,10 +23,22 @@ python3 detect.py draft.txt                    # score it, five checks
 python3 detect.py before.txt after.txt         # prove the delta
 ```
 
-Both read `slop.json`, which is the lexicon: 100+ stock words and phrases with
+Both read `slop.json`, which is the lexicon: 135 stock words and phrases with
 plain-English replacements, 17 invisible character classes, 11 typographic
-substitutions, and 11 structural tells. It is meant to be edited. If the user
+substitutions, and 15 structural tells. It is meant to be edited. If the user
 has a word they always use that the lexicon strips, remove it from the file.
+
+## House rules (hard, not suggestions)
+
+These come from the house writing guide and they override the generic
+scoring. An em dash anywhere in the draft fails the FINGERPRINT check at 0
+and forces the verdict to FLAGGED, no matter how good the rest scores.
+Contractions are expected: a draft with zero contractions caps VOICE at 35.
+Specific numbers and names are required: a draft with zero concrete markers
+scores SPECIFICITY at 0. The lexicon also carries the guide's extra words
+and phrases (intricate, nuanced, unleash, orchestrate, bolster, catalyze,
+demystify, "it is important to note that", "in terms of", "in addition" and
+the rest) and the structural tells below.
 
 ## What gets fixed automatically
 
@@ -39,7 +51,7 @@ remaining Unicode format character it does not have a name for.
 
 **2. Typography.** Em dash to comma, en dash to hyphen, curly quotes to
 straight, ellipsis to three dots, bullet character to hyphen. The em dash pass
-is the one that matters: it collapses ` — ` to `, ` and then cleans up the
+is the one that matters: it collapses the em dash to `, ` and then cleans up the
 double punctuation that leaves behind.
 
 **3. The slop lexicon.** delve, leverage, robust, seamless, crucial, tapestry,
@@ -59,6 +71,10 @@ a sentence needs judgement:
 - Hashtag walls
 - Reflex engagement bait: "Thoughts?", "Agree?", "Who else?"
 - Uniform sentence length and uniform bullet length
+- Bold-first bullets: `**Key point:** description` on every bullet
+- Throat-clearing openers: "So,", "Now,", "Basically,", "Essentially,"
+- "As a [role], I..." credential announcements
+- Colon lectures: "Here's the key point:", "The answer is simple:"
 
 That list is your job. Rewrite each flagged line by hand, keeping the meaning,
 then re-run `detect.py`. This is the part that moves the score from REVIEW to
@@ -71,10 +87,10 @@ PASS, and it is the part a script cannot do.
 | check | what it measures | machine looks like |
 | --- | --- | --- |
 | BURSTINESS | sentence-length variation | every sentence the same length |
-| SPECIFICITY | numbers, names, concrete markers per 100 words | abstract nouns, no figures |
+| SPECIFICITY | numbers, names, concrete markers per 100 words | abstract nouns, no figures. Zero markers scores 0, hard rule |
 | SLOP DENSITY | lexicon hits per 100 words | stock vocabulary |
-| FINGERPRINT | invisible chars, em dashes, curly quotes per 1k chars | typographically perfect |
-| VOICE | contractions, person, structural tells | no contractions, staged reveals |
+| FINGERPRINT | invisible chars, em dashes, curly quotes per 1k chars | typographically perfect. Any em dash scores 0 and forces FLAGGED, hard rule |
+| VOICE | contractions, person, structural tells | no contractions, staged reveals. Zero contractions caps the check at 35, hard rule |
 
 The verdict weights the mean at 60% and the **weakest single check** at 40%,
 because a detector only needs one signal to fire. PASS needs an overall of 70+
