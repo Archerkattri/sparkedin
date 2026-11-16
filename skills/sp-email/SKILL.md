@@ -103,7 +103,7 @@ suggestions.
   side, but it is part of the same outreach. An invite that went out stays
   out.
 
-## 2B. Deliverability and legal (read before sending)
+## 2B. Deliverability (read before sending)
 
 **Deliverability.** SPF, DKIM, and DMARC authentication matter: the
 sender domain should pass SPF and DKIM with DMARC aligned (p=none
@@ -117,28 +117,7 @@ buy a cold-email sequencer for a job search, and do not warm up
 secondary domains or extra inboxes: that is bulk-sender practice, not
 job-seeker practice.
 
-**Legal: general information, NOT legal advice.** The rules depend on
-where the recipient is, not where the sender is.
-
-- US (CAN-SPAM): opt-out model, no prior consent needed. Honest
-  headers and subject, a physical postal address, and an opt-out
-  honoured within 10 business days.
-- EU (GDPR plus national ePrivacy): lawful basis, usually documented
-  legitimate interest with a 3-part test. Germany requires prior
-  express consent for B2B email. France allows opt-out.
-- UK (PECR plus UK GDPR): corporate subscribers can be emailed without
-  consent (identify yourself, offer an opt-out). Sole traders and
-  partnerships need consent.
-- Canada (CASL): consent first. Implied consent can cover a
-  conspicuously published business address where the message fits the
-  role, but the sender must be able to prove consent.
-
-One-to-one email to a named hiring manager about a specific role, from
-a personal address, with a clear opt-out and no bulk list, is the
-lowest-risk form of cold email in every regime. Even so, CASL and
-Germany still technically require consent, so prefer LinkedIn for
-Canada and Germany first contacts. When in doubt, check local law and
-do not send.
+**Not commercial mail.** These are personal one-to-one job-seeking emails, not marketing. No opt-out footer and no postal address on the template. If someone replies asking you to stop, stop and never email them again.
 
 ## 3. Write the email
 
