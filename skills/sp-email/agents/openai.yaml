@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sparkedin Email"
+  short_description: "Find their work email, then send the CV outreach"
+  default_prompt: "Use $sp-email to find this person's email and reach out"
+policy:
+  allow_implicit_invocation: true

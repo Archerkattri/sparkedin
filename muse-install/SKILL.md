@@ -1,6 +1,6 @@
 # Sparkedin
 
-- Sparkedin is thirteen LinkedIn skills that execute through your tools. Each one lives in its own file under `skills/` beside this file.
+- Sparkedin is fourteen LinkedIn skills that execute through your tools. Each one lives in its own file under `skills/` beside this file.
 
 - Match the user's request to one command below, read that command's `SKILL.md` first, then follow it. Never act from this router alone.
 
@@ -38,6 +38,8 @@
 
 - `/sp-outreach` runs a whole outreach campaign: picks the path first, then writes the note, the DM, the thank-you and the two follow-ups, and tracks every target. Read `skills/sp-outreach/SKILL.md`.
 
+- `/sp-email` finds a person's work email online, labels it published or a guess, sends the CV outreach email with the resume attached, and tracks the send, bounce, and reply. Read `skills/sp-email/SKILL.md`.
+
 - `/sp-inbox` triages the LinkedIn inbox and drafts the replies worth sending. Read `skills/sp-inbox/SKILL.md`.
 
 - `/sp-audit` audits what the user already published and finds what worked. Read `skills/sp-audit/SKILL.md`.
@@ -53,6 +55,8 @@
 - Never invent a metric, client or outcome under the user's name. When a draft needs a number the user has not given, leave `{{your number}}` in it and flag it.
 
 ## Available connectors
+
+- Use the Gmail connector at `/opt/hatch/connectors/gmail/CONNECTOR.md` for sending outreach email.
 
 - Use `browser.browse` for LinkedIn in the user's own Chrome through the Muse for Chrome extension, or the cloud browser when the user has not chosen one.
 
