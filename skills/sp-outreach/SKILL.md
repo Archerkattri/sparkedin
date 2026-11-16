@@ -4,8 +4,8 @@ license: MIT
 description: >-
   Run a whole outreach campaign on LinkedIn: pick the path first
   (comment-then-DM, recruiter with job ID, warm-up, alumni, founder,
-  apply-then-message), then write the connection note, the DM, the one
-  follow-up and the thank-you after they accept, and track every target in
+  apply-then-message), then write the connection note, the DM, the two
+  follow-ups and the thank-you after they accept, and track every target in
   outreach.md. Use when the user wants a referral, a job, an introduction,
   or is reaching out to several people at one company.
 ---
@@ -114,10 +114,18 @@ they accept, or the next morning at the latest.
 - **No ask in the thank-you.** The ask comes later, after a real exchange,
   through the follow-up flow below.
 
-### 2.7 Follow-up
+### 2.7 Follow-ups
 
-One polite follow-up after 5-7 days with no reply, adding something new (an
-updated project, a newly posted role). **Max one.** After that, move on.
+Two. That is the number.
+
+- **+4 days** - add something new (an updated project, a newly posted role).
+  Never "just bumping this" or "following up on my last message". If you
+  have nothing new, you have no follow-up.
+- **+10 days** - the close-the-loop message. Say you will stop, and mean it.
+  This one gets a surprising share of the total replies, because it removes
+  the pressure.
+
+Then stop. A third follow-up converts nobody and costs the relationship.
 
 ## 3. Rules for every message
 
@@ -129,7 +137,7 @@ updated project, a newly posted role). **Max one.** After that, move on.
 - Respect a no or no reply. Do not double-message, and do not message two
   people on the same team on the same day.
 - All messages go through `/sp-human` before they go out.
-- Send the note, the DM and the follow-up through the host agent's tools
+- Send the note, the DM and the follow-ups through the host agent's tools
   when the user says go. The host's own approval flow is the gate.
 
 ## 4. Tracker
@@ -145,6 +153,6 @@ lands, a follow-up goes out, or the thread closes.
 
 For each target: the path and the one-line reason, the comment (if the path
 starts with one), the connection note with its exact character count, the DM,
-the thank-you DM, the referral blurb if a referral is the goal, and the
-follow-up with the day it goes out. Then the tracker row. Send through the
+the thank-you DM, the referral blurb if a referral is the goal, and both
+follow-ups with the days they go out. Then the tracker row. Send through the
 host agent's tools when the user says go.

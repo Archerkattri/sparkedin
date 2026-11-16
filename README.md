@@ -95,7 +95,7 @@ Skill files refer to it as `<profile>`.
 | `/sp-carousel` | Document posts. Slide-by-slide copy, the cover that earns the swipe, and the PDF to upload. |
 | `/sp-repurpose` | One video, newsletter or transcript into a week of posts that each stand alone. |
 | `/sp-dm` | The 200-character invite note, the first message, and the two follow-ups. Two. |
-| `/sp-outreach` | A whole outreach campaign. Picks the path first, then writes the note, the DM, the thank-you and the one follow-up, and tracks every target in `<profile>/outreach.md`. |
+| `/sp-outreach` | A whole outreach campaign. Picks the path first, then writes the note, the DM, the thank-you and the two follow-ups, and tracks every target in `<profile>/outreach.md`. |
 | `/sp-inbox` | Triages the inbox into lead / recruiter / peer / ask / spam, and tells you which tell gave the sequence away. |
 | `/sp-audit` | Post-mortem on what you have already published. Ranks by engagement rate and reach multiple, not impressions. |
 | `/sp-stats` | Your own posts and engagement into local JSON, plus a dashboard. Experimental: LinkedIn internals change without notice. |

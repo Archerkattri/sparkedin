@@ -36,7 +36,7 @@
 
 - `/sp-dm` writes the invite note, the first message and the two follow-ups. Read `skills/sp-dm/SKILL.md`.
 
-- `/sp-outreach` runs a whole outreach campaign: picks the path first, then writes the note, the DM, the thank-you and the one follow-up, and tracks every target. Read `skills/sp-outreach/SKILL.md`.
+- `/sp-outreach` runs a whole outreach campaign: picks the path first, then writes the note, the DM, the thank-you and the two follow-ups, and tracks every target. Read `skills/sp-outreach/SKILL.md`.
 
 - `/sp-inbox` triages the LinkedIn inbox and drafts the replies worth sending. Read `skills/sp-inbox/SKILL.md`.
 
