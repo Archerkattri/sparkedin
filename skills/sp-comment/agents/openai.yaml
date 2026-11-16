@@ -1,6 +1,0 @@
-interface:
-  display_name: "Sparkedin Comment"
-  short_description: "Write comments that read as a person with an opinion"
-  default_prompt: "Use $sp-comment to write a comment on this post"
-policy:
-  allow_implicit_invocation: true
