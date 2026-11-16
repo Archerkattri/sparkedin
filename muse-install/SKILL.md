@@ -58,6 +58,8 @@
 
 - `/sp-analytics` keeps a manual analytics journal from numbers the user pastes in. Read `skills/sp-analytics/SKILL.md`.
 
+- `/sp-verify` verifies identity, workplace, or school by country route in the mobile app and runs the profile-completeness checklist before a job search. Read `skills/sp-verify/SKILL.md`.
+
 ## Voice and profile
 
 - Read the user's voice from memory first, then from `<profile>/voice.md` when it exists. Never invent a voice.

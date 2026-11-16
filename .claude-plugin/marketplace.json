@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "sparkedin",
-      "description": "Twenty LinkedIn skills that execute: posts off 21 hook formulas, comments, replies, profile score, weekly plan, DMs, outreach campaigns, email discovery and outreach, inbox triage, carousels, repurposing, audits, own-account stats, slop-free visual design, job-description matching, official-API publishing, polls, Featured and Services curation, manual analytics, and a humanizer that strips the AI fingerprint and scores the draft before it goes out.",
+      "description": "Twenty-one LinkedIn skills that execute: posts off 21 hook formulas, comments, replies, profile score, weekly plan, DMs, outreach campaigns, email discovery and outreach, inbox triage, carousels, repurposing, audits, own-account stats, slop-free visual design, job-description matching, official-API publishing, polls, Featured and Services curation, manual analytics, verification and trust checks, and a humanizer that strips the AI fingerprint and scores the draft before it goes out.",
       "source": "./",
       "category": "productivity",
       "homepage": "https://github.com/Archerkattri/sparkedin"
