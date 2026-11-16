@@ -1,6 +1,0 @@
-interface:
-  display_name: "Sparkedin Carousel"
-  short_description: "Build a LinkedIn document post, slide by slide, as a PDF"
-  default_prompt: "Use $sp-carousel to turn this into a carousel"
-policy:
-  allow_implicit_invocation: true
