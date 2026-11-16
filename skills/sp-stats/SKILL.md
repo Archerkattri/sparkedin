@@ -27,6 +27,13 @@ user first, with the current post count if you know it, and get a yes before
 the loop starts. This is a time and cost gate, not a cap: once the user says
 go, the scrape runs to completion.
 
+Fresh off a restriction: if the account was recently restricted,
+checkpointed, or rate-limited for volume, do not start a full scrape. Wait
+until the account has been quiet for a few days, or run a small sample
+first (one page of posts, counts only) and check it lands clean. A full
+history is 2,600 requests, which is exactly the kind of volume that gets an
+account restricted again.
+
 ## 1. Setup
 
 1. Use the user's own Chrome session through the host agent's browser tools.
@@ -173,6 +180,10 @@ comments and engagement rate, monthly trend, day-of-week and time-of-day
 heatmap, top engagers, and the data-quality warning below. On other hosts,
 build a self-contained dashboard.html in the same data folder from the same
 numbers.
+
+The original linkedin-stats skill shipped Node scripts (analyze.mjs,
+build-dashboard.mjs). They were not ported. The agent computes the analysis
+steps directly from the JSON instead. Port them only if the user asks.
 
 ## 11. Data-quality guard
 

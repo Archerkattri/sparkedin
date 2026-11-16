@@ -24,12 +24,23 @@ experience entries, plus whether they have a banner and featured section. A
 screenshot of the top card is enough for the first pass. Or read the
 profile through the host agent's browser tools.
 
+Blocked read: if the profile will not load (restriction, checkpoint,
+sign-in wall), do not guess and do not score from memory. Draft from the
+user's resume or CV instead, label every draft as drafted-from-resume, and
+score only after access comes back and the live profile can be read.
+
 ## Score it
 
 Read `rubric.json` in this folder. Twelve items, 100 points, each with what
-full marks looks like. Score every item, show the table, and give the total.
-Be honest - most profiles land in the 30s and 40s on the first pass, and a
-generous score is useless.
+full marks looks like. Score every item you actually saw, show the table,
+and give the total. Be honest - most profiles land in the 30s and 40s on
+the first pass, and a generous score is useless.
+
+Score only what you verified. If the read could not verify an item (photo,
+skills, recommendations, activity, contact), mark it unverified and leave
+it out of the total. Never score it zero and never guess it. The total is
+out of the points for the verified items only, so say that plainly, for
+example 28/58 with 42 points unverified, and say what would verify them.
 
 ```
 PROFILE SCORE  41/100
