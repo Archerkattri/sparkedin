@@ -23,9 +23,9 @@ python3 detect.py draft.txt                    # score it, six checks
 python3 detect.py before.txt after.txt         # prove the delta
 ```
 
-Both read `slop.json`, which is the lexicon: 152 stock words and phrases with
-plain-English replacements (105 words, 47 phrases), 17 invisible character
-classes, 11 typographic substitutions, 19 structural tells, and a 3-word
+Both read `slop.json`, which is the lexicon: 157 stock words and phrases with
+plain-English replacements (106 words, 51 phrases), 17 invisible character
+classes, 11 typographic substitutions, 22 structural tells, and a 3-word
 density watch list. It is meant to be edited. If the user has a word they
 always use that the lexicon strips, remove it from the file. The list is
 date-stamped 2026-11-16 and re-fit quarterly, next due 2027-02-16, because
@@ -68,6 +68,22 @@ that changed the tool:
   alone are tells; markdown proves AI; humanizers make writing better.
   Every one of those is wrong or overstated in the research, and the tool
   no longer acts on them.
+- **Reddit firsthand (9 threads, Nov 2026).** The #1 consensus tell across
+  nearly every thread is the "not X, it's Y" contrast structure, including
+  the past-tense form "it wasn't just X, it was Y". The em dash is the most
+  argued-about tell and heavily contested as a false positive ("the em dash
+  is just the visual scapegoat", humans used them for centuries), but the
+  ban stays as house style anyway. The rule of three is "writing 101", not
+  an AI tell, so it is now only flagged at density, 2 or more in a document.
+  New tells from the threads: fake-question hooks ("The kicker?", "And do
+  you know what I learned?"), over-explaining the obvious (defining a term
+  right after using it), fake corporate friendliness ("I hope this essay
+  finds you well"), and sudden verbosity, longer text with fancier words
+  than the writer normally uses. The fixes people swear by: read it aloud
+  (if it sounds like a lecture instead of a person talking, that is the
+  tell), vary sentence length, cut filler, add specifics, write from an
+  outline, and train on your own voice, even keeping your own bad habits
+  for authenticity.
 
 ## House rules (hard, not suggestions)
 
@@ -115,10 +131,15 @@ with the structural signals. `detect.py` counts them at half weight;
 Structural tells get **flagged, not rewritten**, because changing the shape of
 a sentence needs judgement:
 
-- "It's not just X, it's Y", "not only X but also Y", "less about X, more
-  about Y"
-- Rule-of-three triads (only scored at density, 2 or more in a document)
-- Rhetorical one-word question lines: "The result?"
+- "It's not just X, it's Y", "it wasn't just X, it was Y", "not only X but
+  also Y", "less about X, more about Y"
+- Rule-of-three triads (only flagged at density, 2 or more in a document;
+  one triple is writing 101)
+- Rhetorical one-word question lines: "The result?", "The kicker?"
+- Fake-question hooks: "And do you know what I learned?"
+- Over-explaining the obvious: "in other words", "simply put" (only flagged
+  at density)
+- Fake corporate friendliness: "I hope this finds you well"
 - Moralizing closers and stated lessons: "the takeaway is", "what this
   taught me", "reminds us that"
 - Vague attribution with no named source: "studies show", "experts say"
@@ -188,7 +209,13 @@ numbers and names habits, and their sentence shapes, and score new drafts
 against their own past writing, not against a generic "human" template. A
 generic human template is itself a fingerprint: banning em dashes bred the
 mid-sentence colon, banning the colon bred the tailing negation. Imitate the
-author, not the average.
+author, not the average. Reddit's version of the same advice: build a
+lexical fingerprint from the author's own writing and keep even their bad
+habits for authenticity. A sudden jump in length and fancy words versus the
+author's own baseline is itself a tell, so compare the draft against their
+past work, not against a generic standard. Do not prompt from a blank page:
+write from a real outline or plan, and use AI for macro structure, not
+sentence generation.
 
 ## What the humanizer never does
 
@@ -213,7 +240,9 @@ behalf, and do not tell a user their text is undetectable. A score is a
 population statistic with a known error budget, never a verdict on who wrote
 a passage: commercial detectors flag minimally polished human text about 43%
 of the time, and non-native writing at far higher rates. Short text defeats
-every detector.
+every detector. The tells are not universal across models either: ChatGPT
+does not sound like Claude, Claude does not sound like Gemini, and output
+personalized to the author's own voice evades pattern-spotting entirely.
 
 ## Order of operations
 
@@ -222,8 +251,10 @@ every detector.
    facts the flags ask for, or cut the claim. Restore the repeated key term
    where the draft synonym-chases. Delete the scaffolding intro and the
    moralizing closer.
-3. `detect.py draft.txt clean.txt` to show the before and after.
-4. If the verdict is not PASS, fix the weakest check named in the output and
+3. Read the cleaned draft aloud. If it sounds like a lecture instead of a
+   person talking, it still needs restructuring, whatever the score says.
+4. `detect.py draft.txt clean.txt` to show the before and after.
+5. If the verdict is not PASS, fix the weakest check named in the output and
    go again. Two rounds is normal. Five means the draft was written by
    formula, and the fix is a different draft, not more passes.
-5. Show the user the cleaned text and the score. Never the score alone.
+6. Show the user the cleaned text and the score. Never the score alone.

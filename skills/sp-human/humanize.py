@@ -159,6 +159,22 @@ def pass_lexical(text, lex):
     text = re.sub(r"[ \t]{2,}", " ", text)
     text = re.sub(r"(?m)^[ \t]*([,.;:])\s*", "", text)
     text = re.sub(r"\s+([,.;:!?])", r"\1", text)
+    # A deleted word followed by a comma leaves the comma dangling after the
+    # previous sentence's full stop ("X. , Y" -> "X. Y").
+    text = re.sub(r"([.!?])\s*,", r"\1", text)
+    text = re.sub(r",\s*,", ",", text)
+    # A deleted sentence-initial filler leaves the next word lowercase
+    # ("Indeed, the results..." -> ". the results"). Capitalize it, except
+    # after abbreviations. Only triggers where a sentence wrongly starts
+    # lowercase, which in practice is the deletion case above.
+    _abbr = ("etc", "vs", "Mr", "Mrs", "Ms", "Dr", "St", "Jr", "Sr")
+
+    def _cap_sentence_start(m):
+        if m.group(1).split()[-1] in _abbr:
+            return m.group(0)
+        return m.group(1) + m.group(2) + m.group(3).upper()
+
+    text = re.sub(r"([^.!?]{2,})([.!?]\s+)([a-z])", _cap_sentence_start, text)
     text = re.sub(r"(?m)^[ \t]+$", "", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     # An em dash that became a comma, followed by a sentence connective, leaves
@@ -192,6 +208,12 @@ def scan_structures(text, lex):
         except re.error:
             continue
         found = pattern.findall(text)
+        if not found:
+            continue
+        if s.get("density_only") and len(found) < 2:
+            # One triple, one "in conclusion", one restatement is normal
+            # writing. Only a pattern across the document gets flagged.
+            continue
         if found:
             name = s["name"]
             if s.get("scored") is False:

@@ -54,9 +54,9 @@ python3 detect.py before.txt after.txt       # prove the delta
 
 - **Invisible characters.** Zero-width spaces and joiners, word joiners, soft hyphens, byte-order marks, Unicode tag characters, non-breaking and narrow spaces. Your keyboard does not make these. They survive copy-paste and they are invisible in every editor you own.
 - **Typography.** Em dash to comma, en dash to hyphen, curly quotes to straight, ellipsis to three dots.
-- **The lexicon.** 152 stock words and phrases with plain-English replacements, with capitalisation preserved and URLs untouched. It lives in [`slop.json`](skills/sp-human/slop.json) and it is meant to be edited. The house writing-guide rules are baked in: any em dash is a hard fail, zero contractions caps the voice check, and a draft with no numbers or names scores zero on specificity. The list is date-stamped and re-fit quarterly, because focal words expire within a model generation.
+- **The lexicon.** 157 stock words and phrases with plain-English replacements, with capitalisation preserved and URLs untouched. It lives in [`slop.json`](skills/sp-human/slop.json) and it is meant to be edited. The house writing-guide rules are baked in: any em dash is a hard fail, zero contractions caps the voice check, and a draft with no numbers or names scores zero on specificity. The list is date-stamped and re-fit quarterly, because focal words expire within a model generation.
 
-**Flagged instead of fixed:** "It's not just X, it's Y", rule-of-three triads, one-word rhetorical questions, moralizing closers, vague attribution with no named source, hashtag walls, reflex engagement bait, uniform sentence length. Changing the shape of a sentence needs judgement, so those are handed back for a rewrite rather than mangled by a regex.
+**Flagged instead of fixed:** "It's not just X, it's Y", rule-of-three triads, one-word rhetorical questions, fake-question hooks, moralizing closers, vague attribution with no named source, hashtag walls, reflex engagement bait, uniform sentence length. Changing the shape of a sentence needs judgement, so those are handed back for a rewrite rather than mangled by a regex.
 
 **The six checks**, scored 0 to 100, higher is more human:
 

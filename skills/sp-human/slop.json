@@ -1,6 +1,6 @@
 {
-  "version": "1.2",
-  "note": "Lexicon used by humanize.py and detect.py. Replacements are plain-English and keep the sentence grammatical. Edit freely - it is meant to be yours. Version 1.2 (2026-11-16) applies the humanizer writing research: focal-vocabulary list is density-scored, not banned; era-successor words live in density_watch (counted, never auto-replaced); structural tells add negative-parallelism variants, moralizing closers, scaffolding intros and vague attribution. The list is date-stamped: re-fit quarterly, next due 2027-02-16, because focal words expire within a model generation.",
+  "version": "1.3",
+  "note": "Lexicon used by humanize.py and detect.py. Replacements are plain-English and keep the sentence grammatical. Edit freely - it is meant to be yours. Version 1.3 (2026-11-16) folds in 9 Reddit threads read firsthand: the not-X-but-Y family is the #1 consensus tell (past-tense variant added); fake-question hooks, over-explaining markers, and fake corporate friendliness added; rule of three softened to density-only because it is writing 101, not an AI tell. Version 1.2 (2026-11-16) applied the humanizer writing research: focal-vocabulary list is density-scored, not banned; era-successor words live in density_watch (counted, never auto-replaced). The list is date-stamped: re-fit quarterly, next due 2027-02-16.",
   "invisible": [
     {
       "cp": "U+200B",
@@ -670,6 +670,11 @@
       "find": "enhance",
       "replace": "improve",
       "family": "verbs"
+    },
+    {
+      "find": "indeed",
+      "replace": "",
+      "family": "connectives"
     }
   ],
   "phrases": [
@@ -907,6 +912,26 @@
       "find": "i almost didn't share this",
       "replace": "",
       "family": "openers"
+    },
+    {
+      "find": "i hope this finds you well",
+      "replace": "",
+      "family": "openers"
+    },
+    {
+      "find": "i hope this email finds you well",
+      "replace": "",
+      "family": "openers"
+    },
+    {
+      "find": "i hope this essay finds you well",
+      "replace": "",
+      "family": "openers"
+    },
+    {
+      "find": "let's break it down",
+      "replace": "",
+      "family": "openers"
     }
   ],
   "structures": [
@@ -924,14 +949,14 @@
     },
     {
       "id": "isnt-about",
-      "regex": "(?i)\\b(?:this|it) is(?:n'?t| not) about [^.!?\\n]{2,60}[.!] it'?s about\\b",
+      "regex": "(?i)\\b(?:this|it) is(?:n'?t| not) (?:just |only |merely )?about [^.!?\\n]{2,60}[.!] it'?s about\\b",
       "name": "\"It isn't about X. It's about Y.\"",
       "fix": "Lead with Y. The reversal is the tell."
     },
     {
       "id": "the-result",
-      "regex": "(?i)^\\s*(?:the result|the best part|the kicker|the catch)\\?\\s*$",
-      "name": "One-word rhetorical question line",
+      "regex": "(?im)(?:^|[.!?]\\s+)(?:the result|the best part|the kicker|the catch|the issue|the twist)\\?",
+      "name": "One-word rhetorical question",
       "fix": "Answer it inline instead of staging a reveal."
     },
     {
@@ -944,7 +969,7 @@
       "id": "triad",
       "regex": "(?i)\\b\\w+, \\w+, and \\w+\\.",
       "name": "Rule-of-three triad",
-      "fix": "Two items or four. Three is the model's default rhythm.",
+      "fix": "One triple is writing 101. Every list landing on three is the pattern, vary the count.",
       "density_only": true
     },
     {
@@ -1026,6 +1051,25 @@
       "regex": "(?i)\\b(?:experts|studies|research|reports|many (?:people|experts))\\s+(?:say|show|suggest|indicate|argue|believe|find)\\b",
       "name": "Vague attribution, no named source",
       "fix": "Name the source, the date, and the number, or cut the claim. Flag as specifics to add."
+    },
+    {
+      "id": "wasnt-just",
+      "regex": "(?i)\\bit (?:wasn'?t|was not) (?:just|only) [^.!?\\n]{2,60}[,.] it was\\b",
+      "name": "\"It wasn't just X, it was Y\"",
+      "fix": "Say the one thing you actually mean. Delete the setup half."
+    },
+    {
+      "id": "fake-question-hook",
+      "regex": "(?i)\\bdo you know what (?:i |we )?(?:learned|discovered|found|realized|happened)\\b",
+      "name": "Fake-question hook",
+      "fix": "Delete the staged question and state the point."
+    },
+    {
+      "id": "over-explain",
+      "regex": "(?i)\\b(?:in other words|that is to say|simply put|to put it simply)\\b",
+      "name": "Over-explaining the obvious",
+      "fix": "If the first sentence said it, delete the restatement.",
+      "density_only": true
     }
   ],
   "density_watch": [
