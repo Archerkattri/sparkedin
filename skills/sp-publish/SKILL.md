@@ -50,8 +50,8 @@ difference.
 
 ## Publish now
 
-1. Take the approved draft. It must already exist: written by `/sp-post`,
-   `/sp-carousel`, or `/sp-poll`, and run through `/sp-human`. This skill
+1. Take the approved draft. It must already exist: written by `/sp-post`
+   or `/sp-poll`, and run through `/sp-human`. This skill
    never writes the post. It publishes it.
 2. Pick the post type and build the call to
    `POST https://api.linkedin.com/rest/posts`:

@@ -1,6 +1,6 @@
 # Sparkedin
 
-- Sparkedin is twenty LinkedIn skills that execute through your tools. Each one lives in its own file under `skills/` beside this file.
+- Sparkedin is seventeen LinkedIn skills that execute through your tools. Each one lives in its own file under `skills/` beside this file.
 
 - Match the user's request to one command below, read that command's `SKILL.md` first, then follow it. Never act from this router alone.
 
@@ -18,25 +18,19 @@
 
 ## The commands
 
-- `/sp-post` writes a LinkedIn post from one idea with three hook options and one full draft. Read `skills/sp-post/SKILL.md`.
+- `/sp-post` writes a LinkedIn post from one idea with three hook options and one full draft, or a document post as slide copy and a PDF. Read `skills/sp-post/SKILL.md`.
 
-- `/sp-comment` writes comments on other people's posts in one of nine types. Read `skills/sp-comment/SKILL.md`.
+- `/sp-engage` writes comments on other people's posts in one of nine types, and drafts replies to the comments under the user's own post, triaged first. Read `skills/sp-engage/SKILL.md`.
 
-- `/sp-reply` drafts replies to the comments under the user's own post, triaged first. Read `skills/sp-reply/SKILL.md`.
-
-- `/sp-profile` scores a LinkedIn profile out of 100 and rewrites what lost points. Read `skills/sp-profile/SKILL.md`.
+- `/sp-profile` scores a LinkedIn profile out of 100, rewrites what lost points, curates Featured from real performance, and drafts the Services page. Read `skills/sp-profile/SKILL.md`.
 
 - `/sp-plan` builds the week on LinkedIn and writes `<profile>/plan.md`. Read `skills/sp-plan/SKILL.md`.
 
 - `/sp-human` strips the machine fingerprint out of a draft and scores it on five checks. Read `skills/sp-human/SKILL.md`.
 
-- `/sp-carousel` builds a document post as slide copy and a PDF. Read `skills/sp-carousel/SKILL.md`.
-
 - `/sp-repurpose` turns one long asset into a week of posts. Read `skills/sp-repurpose/SKILL.md`.
 
-- `/sp-dm` writes the invite note, the first message and the two follow-ups. Read `skills/sp-dm/SKILL.md`.
-
-- `/sp-outreach` runs a whole outreach campaign: picks the path first, then writes the note, the DM, the thank-you and the two follow-ups, and tracks every target. Read `skills/sp-outreach/SKILL.md`.
+- `/sp-outreach` runs outreach for one person or a whole campaign: picks the path first, then writes the note, the DM, the thank-you and the two follow-ups, and tracks every target. Read `skills/sp-outreach/SKILL.md`.
 
 - `/sp-email` finds a person's work email online, labels it published or a guess, sends the CV outreach email with the resume attached, and tracks the send, bounce, and reply. Read `skills/sp-email/SKILL.md`.
 
@@ -53,8 +47,6 @@
 - `/sp-publish` publishes a post through the official Share API and schedules through the host agent's cron. Read `skills/sp-publish/SKILL.md`.
 
 - `/sp-poll` designs a LinkedIn poll and builds the manual voter follow-up list. Read `skills/sp-poll/SKILL.md`.
-
-- `/sp-services` curates Featured from real performance and drafts the Services page. Read `skills/sp-services/SKILL.md`.
 
 - `/sp-analytics` keeps a manual analytics journal from numbers the user pastes in. Read `skills/sp-analytics/SKILL.md`.
 

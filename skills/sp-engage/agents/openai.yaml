@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sparkedin Engage"
+  short_description: "Comments on others' posts and replies under your own"
+  default_prompt: "Use $sp-engage to comment on this post"
+policy:
+  allow_implicit_invocation: true

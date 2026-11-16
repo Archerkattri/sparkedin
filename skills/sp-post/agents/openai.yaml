@@ -1,6 +1,6 @@
 interface:
   display_name: "Sparkedin Post"
-  short_description: "Turn one idea into a LinkedIn post that sounds like you"
+  short_description: "Turn one idea into a post or carousel that sounds like you"
   default_prompt: "Use $sp-post to turn my idea into a LinkedIn post"
 policy:
   allow_implicit_invocation: true

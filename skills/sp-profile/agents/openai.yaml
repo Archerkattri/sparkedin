@@ -1,6 +1,6 @@
 interface:
   display_name: "Sparkedin Profile"
-  short_description: "Score your LinkedIn profile and rewrite what loses points"
+  short_description: "Score your profile, curate Featured, set up Services"
   default_prompt: "Use $sp-profile to score my LinkedIn profile"
 policy:
   allow_implicit_invocation: true

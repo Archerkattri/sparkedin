@@ -2,21 +2,25 @@
 name: sp-outreach
 license: MIT
 description: >-
-  Run a whole outreach campaign on LinkedIn: pick the path first
-  (comment-then-DM, recruiter with job ID, warm-up, alumni, founder,
-  apply-then-message), then write the connection note, the DM, the two
-  follow-ups and the thank-you after they accept, and track every target in
-  outreach.md. Use when the user wants a referral, a job, an introduction,
-  or is reaching out to several people at one company.
+  Run LinkedIn outreach for one person or a whole campaign. For one person:
+  the 200-character invite note, the first message, and the two follow-ups.
+  For a campaign: pick the path first (comment-then-DM, recruiter with job
+  ID, warm-up, alumni, founder, apply-then-message), then write the
+  connection note, the DM, the two follow-ups and the thank-you after they
+  accept, and track every target in outreach.md. Use when the user says
+  "write a connection request", "DM this person", "outreach message", "how
+  do I follow up", or wants a referral, a job, an introduction, or is
+  reaching out to several people at one company.
 ---
 
 # sp-outreach
 
 Profile directory: `<profile>` holds voice.md, log.md, plan.md and outreach.md. Muse uses `~/workspace/linkedin/`, Claude Code uses `~/.claude/linkedin/`, ChatGPT and Codex use a folder you choose.
 
-One person is a message. Several people is a campaign. This skill is the
-campaign version of `/sp-dm`: it picks the path before it writes a word,
-because the path decides what the message can say.
+One person is a message. Several people is a campaign. This skill handles
+both. It picks the path before it writes a word, because the path decides
+what the message can say. The invite note is 200 characters. The first DM
+decides whether there is a second one. Neither is a pitch.
 
 ## 0. Inputs
 
@@ -32,6 +36,10 @@ Ask for, in one batched question:
    link.
 5. **What the user wants** - a referral, a conversation, a job, a sale. Be
    honest internally, even if the message does not lead with it.
+
+If there is no specific reason to message this person today, say so. A
+message with no reason is what everyone else sends, and it is why their
+reply rate is 2%.
 
 Never scrape or guess personal details. Use only what the user provides, or
 public professional pages they point to.
@@ -49,6 +57,9 @@ Recommend the path with the best odds, and say why in one line:
 | A startup or founder | A **direct, value-first DM or email** to the founder: what the user built that is relevant, and a link |
 | No person, just the company | Apply on the careers page first, then find a recruiter or alumnus and message them with the application ID |
 | Personalised notes are used up, or the note field is not offered | **Blank invite, then a DM after they accept.** A real path, not a fallback to apologise for |
+
+For one person with no campaign behind it, skip the table and go straight
+to section 2.8.
 
 ## 2. Write the messages
 
@@ -73,16 +84,31 @@ Recommend the path with the best odds, and say why in one line:
   so offer it.
 - Shape: a hook (why them), then who you are in a few words, then a soft
   reason to connect. **No ask in the note** unless the path is recruiter
-  plus job ID.
+  plus job ID. The formula is `{one specific reference to them} + {one line
+  of who you are} + {no ask}`.
 - Show the exact **character count** for each variant.
+
+```
+Saw your post on killing the discovery call - we did the same thing in March
+and it worked. I run ops at a 12-person studio. Would like to follow along.
+                                                                    [187/200]
+```
 
 ### 2.3 DM / InMail / email (after connecting, or to a recruiter)
 
 - 100 words or under for a DM, 150 words or under for an email.
+- **Wait a day after they accept before the first message with an ask.**
+  The thank-you in 2.6 goes out first, on the day they accept or the next
+  morning. The ask comes after.
+- **Two to four sentences.** A screen of text is a delete.
 - Structure: a specific hook, then one proof (with a link), then **one small,
   clear ask** ("Would you be open to referring me for SDE-1, Job ID 12345?",
   or for alumni "Could I ask you 3 quick questions about the team?"), then an
   easy out ("Totally understand if not").
+- Reference the specific thing from the note. Continuity is the whole
+  reason the note was specific.
+- **Give something before asking.** A number, a template, a name, an answer.
+- **No calendar link in message one.** It reads as a funnel, because it is.
 - Emails: 3 subject lines, short and specific, e.g.
   `SDE-1 (Job 12345): built a Go rate limiter`.
 
@@ -126,6 +152,16 @@ Two. That is the number.
   the pressure.
 
 Then stop. A third follow-up converts nobody and costs the relationship.
+
+### 2.8 One person, no campaign
+
+When the user is reaching out to one specific person and there is no
+campaign behind it, skip section 1 and run this straight line: the
+connection note (2.2), the thank-you when they accept (2.6), the first
+message a day later (2.3), then the two follow-ups (2.7). Same limits,
+same shapes, same tracker row. Nothing about a single message is simpler
+than the campaign version. It is the same craft with one row instead of
+many.
 
 ## 3. Rules for every message
 

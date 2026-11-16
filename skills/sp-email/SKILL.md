@@ -135,7 +135,7 @@ to the next target, so a crash does not lose the record.
 
 ## 5. Follow-ups
 
-Two. That is the number, same as `/sp-dm` and `/sp-outreach`.
+Two. That is the number, same as `/sp-outreach`.
 
 - **+4 days** - add something new (an updated project, a newly posted
   role). Never "just bumping this" or "following up on my last message".

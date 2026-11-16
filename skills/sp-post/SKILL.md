@@ -3,11 +3,13 @@ name: sp-post
 license: MIT
 description: >-
   Write a LinkedIn post from a raw idea using 21 proven hook formulas, in the
-  user's own voice, humanized so it does not read as AI. Use whenever the user
+  user's own voice, humanized so it does not read as AI. Also builds document
+  posts (carousels) as slide-by-slide copy and a PDF. Use whenever the user
   wants a LinkedIn post, a hook, a draft for the feed, "post about X", "turn
-  this into a LinkedIn post", or asks for hook options. Produces three hook
-  options and one full draft. When the user says go, publish it through
-  the host agent's tools.
+  this into a LinkedIn post", "carousel", "document post", "slides for
+  LinkedIn", or asks for hook options. Produces three hook options and one
+  full draft. When the user says go, publish it through the host agent's
+  tools.
 ---
 
 # sp-post
@@ -15,7 +17,9 @@ description: >-
 Profile directory: `<profile>` holds voice.md, log.md and plan.md. Muse uses `~/workspace/linkedin/`, Claude Code uses `~/.claude/linkedin/`, ChatGPT and Codex use a folder you choose.
 
 Turns one raw idea into a LinkedIn post that sounds like the person who
-posted it.
+posted it. Two formats live here: the text post below, and the document
+post (carousel) in the section after the loop. Pick the format by what the
+idea is, not by habit.
 
 ## Before you write
 
@@ -76,6 +80,70 @@ Reply "yes" to post it, or tell me what to change.
 **5. Publish it.** On "yes", publish the post through the host agent's
 tools, then append the post to `<profile>/log.md` with the date, the hook used
 and the first line, so `/sp-audit` has a history to work from later.
+
+## Document posts (carousels)
+
+Document posts are the highest-dwell format on LinkedIn, because a swipe is
+counted and a scroll is not. The format rewards one idea broken into steps.
+It punishes a text post cut into pieces.
+
+### When to use it instead of a text post
+
+Use a carousel when the idea has **sequence** - steps, a countdown, a
+before/after progression, a framework with parts. Use a text post when the
+idea is one claim. Splitting one claim across eight slides is the most common
+way carousels fail, and if that is what the user has, say so and write a
+text post instead.
+
+### Structure
+
+8-12 slides. Under 8 is a text post. Over 12 and the completion rate falls off
+a cliff.
+
+```
+1        COVER      the hook, 6 words or fewer, plus one line of promise
+2        THE STAKE  why this matters, in one sentence
+3-N      ONE IDEA PER SLIDE. A headline of 3-7 words, and at most 25 words
+                    under it. If a slide needs a paragraph, it is two slides.
+N+1      RECAP      the whole thing as a list, so the screenshot is useful
+LAST     CTA        one action. Follow, comment a keyword, or the link. One.
+```
+
+### Slide copy rules
+
+- **Slide 1 is 80% of the result.** Six words. Big. The rest of the deck
+  cannot save a cover nobody swipes.
+- **Number every slide** (3/10). Completion goes up when people can see the
+  end.
+- **No slide is a paragraph.** If you cannot say it in 25 words, split it.
+- **The recap slide is the one people screenshot.** Make it standalone.
+- **The user's handle on every slide**, small, bottom corner. Screenshots
+  travel without you.
+
+### Making the PDF
+
+LinkedIn wants a PDF, 1080x1350 (4:5) for maximum feed real estate, under
+100MB, under 300 pages. Build it as HTML and print to PDF:
+
+```bash
+# one page per slide, 1080x1350, no margins
+# then: Chrome headless --print-to-pdf, or any HTML-to-PDF you already use
+```
+
+Write the HTML with one `<section>` per slide, `width:1080px; height:1350px;
+page-break-after:always`, a single accent colour, and type no smaller than
+28px - people read these on a phone at thumbnail size. If the user has a brand
+skill or design system in this project, use it and do not invent a palette.
+
+### Output
+
+The slide-by-slide copy first, as a numbered list the user can read in ten
+seconds. Then the accompanying **post text** - a carousel still needs 2-3
+lines above it, which is the actual hook in the feed. Run both through
+`/sp-human`. Then build the PDF only if the user approves the copy.
+
+Upload the PDF to LinkedIn through the host agent's tools when the user
+says go.
 
 ## Rules that make the difference
 

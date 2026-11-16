@@ -1,5 +1,5 @@
 name: sparkedin
 title: Sparkedin
-description: Run twenty-one LinkedIn skills that execute: posts, comments, replies, profile scoring, weekly planning, DMs, outreach campaigns, email discovery and outreach, inbox triage, carousels, repurposing, audits, own-account stats, slop-free visual design, job-description matching, official-API publishing, polls, Featured and Services curation, manual analytics, verification and trust checks, and a humanizer that strips the AI fingerprint from drafts.
+description: Run seventeen LinkedIn skills that execute: posts and carousels, engagement, profile scoring with Featured and Services curation, weekly planning, outreach campaigns and DMs, email discovery and outreach, inbox triage, repurposing, audits, own-account stats, slop-free visual design, job-description matching, official-API publishing, polls, manual analytics, verification and trust checks, and a humanizer that strips the AI fingerprint from drafts.
 category: Work and knowledge
 include_in_prompt: true
