@@ -1,6 +1,0 @@
-interface:
-  display_name: "Sparkedin Services"
-  short_description: "Curate Featured and set up your LinkedIn Services page"
-  default_prompt: "Use $sp-services to refresh my Featured and Services sections"
-policy:
-  allow_implicit_invocation: true
