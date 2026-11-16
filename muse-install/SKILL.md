@@ -1,6 +1,6 @@
 # Sparkedin
 
-- Sparkedin is fifteen LinkedIn skills that execute through your tools. Each one lives in its own file under `skills/` beside this file.
+- Sparkedin is twenty LinkedIn skills that execute through your tools. Each one lives in its own file under `skills/` beside this file.
 
 - Match the user's request to one command below, read that command's `SKILL.md` first, then follow it. Never act from this router alone.
 
@@ -47,6 +47,16 @@
 - `/sp-stats` pulls the user's own LinkedIn posts and engagement into local JSON and builds a dashboard. Experimental. Read `skills/sp-stats/SKILL.md`.
 
 - `/sp-visual` designs banners, post images, and carousel art that do not look AI-generated. Read `skills/sp-visual/SKILL.md`.
+
+- `/sp-jd` matches a job description against the user's profile and resume, with a gap table, quoted evidence, and what to tailor. Read `skills/sp-jd/SKILL.md`.
+
+- `/sp-publish` publishes a post through the official Share API and schedules through the host agent's cron. Read `skills/sp-publish/SKILL.md`.
+
+- `/sp-poll` designs a LinkedIn poll and builds the manual voter follow-up list. Read `skills/sp-poll/SKILL.md`.
+
+- `/sp-services` curates Featured from real performance and drafts the Services page. Read `skills/sp-services/SKILL.md`.
+
+- `/sp-analytics` keeps a manual analytics journal from numbers the user pastes in. Read `skills/sp-analytics/SKILL.md`.
 
 ## Voice and profile
 

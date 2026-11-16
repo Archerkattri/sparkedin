@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sparkedin JD Match"
+  short_description: "Match a job description against your profile, find the gaps"
+  default_prompt: "Use $sp-jd to check this job description against my profile"
+policy:
+  allow_implicit_invocation: true

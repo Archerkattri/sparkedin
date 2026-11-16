@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sparkedin Analytics"
+  short_description: "Track your LinkedIn analytics week by week, by hand"
+  default_prompt: "Use $sp-analytics to log this week's LinkedIn numbers"
+policy:
+  allow_implicit_invocation: true

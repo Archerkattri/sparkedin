@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sparkedin Publish"
+  short_description: "Publish a LinkedIn post through the official Share API"
+  default_prompt: "Use $sp-publish to publish this post to LinkedIn"
+policy:
+  allow_implicit_invocation: true

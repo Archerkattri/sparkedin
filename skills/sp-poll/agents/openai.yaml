@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sparkedin Poll"
+  short_description: "Design a LinkedIn poll and follow up with the voters"
+  default_prompt: "Use $sp-poll to design a poll for my LinkedIn audience"
+policy:
+  allow_implicit_invocation: true

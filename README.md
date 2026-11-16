@@ -1,8 +1,8 @@
 # Sparkedin
 
-**Fifteen LinkedIn skills that do the work. Free, MIT licensed, no signup, no API key.**
+**Twenty LinkedIn skills that do the work. Free, MIT licensed, no signup, no API key.**
 
-Sparkedin turns your AI agent into your LinkedIn operator. It writes your posts, comments on the right threads, replies under your own posts, runs outreach campaigns, finds work emails and sends the outreach, scores your profile, plans your week, and pulls your own stats. Every word goes out in your voice, and nothing goes out without your say-so.
+Sparkedin turns your AI agent into your LinkedIn operator. It writes your posts, comments on the right threads, replies under your own posts, runs outreach campaigns, finds work emails and sends the outreach, scores your profile, plans your week, pulls your own stats, matches job descriptions against your resume, publishes through the official Share API, runs polls, curates Featured and Services, and keeps a weekly analytics journal. Every word goes out in your voice, and nothing goes out without your say-so.
 
 Built for Muse first. Also works with Claude Code, ChatGPT, and Codex.
 
@@ -11,11 +11,13 @@ Built for Muse first. Also works with Claude Code, ChatGPT, and Codex.
 - **Write.** One idea becomes a post built on 21 proven hook formulas, with three hook options and a full draft.
 - **Engage.** Comments that add something real, replies that sort the signal from the noise, and an inbox triaged into leads, recruiters, peers, and spam.
 - **Reach out.** Full campaigns. Pick the path first, then the note, the DM, two follow-ups, and the thank-you when they accept. Every target tracked. And the email half: find their work address, label it published or a guess, send the CV outreach, watch for the bounce.
-- **Measure.** Your profile scored out of 100 with fixes in order, your past posts ranked by what actually worked, and your own engagement pulled into JSON and a dashboard.
+- **Measure.** Your profile scored out of 100 with fixes in order, your past posts ranked by what actually worked, your own engagement pulled into JSON and a dashboard, and a weekly analytics journal built from numbers you paste in.
+- **Match.** A job description pasted in comes back as a gap table against your resume, with what to tailor and nothing invented.
+- **Publish.** Posts go out through the official Share API, scheduled through your agent's cron, with polls designed and followed up by hand.
 - **Sound like you.** Every word passes through the humanizer first. It strips invisible characters, stock phrasing, and the tells that make generated text read as generated, then scores the result before it goes out.
 - **Look human.** Banners, post images, and carousel art that do not read as AI slop. The tells, the human-made principles, and the banner prompt, built from real use.
 
-## The fifteen
+## The twenty
 
 | Command | What it does |
 | --- | --- |
@@ -34,6 +36,11 @@ Built for Muse first. Also works with Claude Code, ChatGPT, and Codex.
 | `/sp-audit` | Post-mortem on what you have already published. Ranks by engagement rate and reach multiple, not impressions. |
 | `/sp-stats` | Your own posts and engagement into local JSON, plus a dashboard. Experimental: LinkedIn internals change without notice. |
 | `/sp-visual` | Banners, post images, and carousel art that do not look AI-generated. The slop tells, the human-made principles, and the banner prompt. |
+| `/sp-jd` | A job description against your profile and resume. A gap table with quoted evidence, what to tailor, and a cover letter angle. Nothing invented. |
+| `/sp-publish` | Publishes through the official Share API: text, image, video, document, article, and poll. Schedules through your agent's cron. The sanctioned path. |
+| `/sp-poll` | Poll design inside the 140/30-character limits, duration choice, results post, and a manual follow-up list from the voters only the author can see. |
+| `/sp-services` | Featured curation from real performance and a Services page: up to 10 services, a 500-character description, and an honest rate range. |
+| `/sp-analytics` | A manual analytics journal. Paste the numbers weekly, watch the funnel, and compare your AI-assisted posts against your human ones, within person. |
 
 ## The humanizer
 
@@ -118,7 +125,7 @@ Skill files refer to it as `<profile>`.
 
 Most LinkedIn tools stop at a draft. Sparkedin finishes the job. It was built to close the gap between "your agent wrote it" and "it went out", without handing your voice over to a template. The skills execute through your agent's own tools, so a post, an invite, or a DM only moves when you say go, and your agent's own approval flow is the gate.
 
-Sparkedin is built and maintained by Krishi Attri. It started as a fork of the LinkedIn agent skill by Jake Schincariol, and grew into a full pack: an execution model instead of drafts only, a portable profile directory, ChatGPT sidecars, a Muse router, a campaign-level outreach skill, an email discovery and outreach skill, and an own-account stats skill.
+Sparkedin is built and maintained by Krishi Attri. It started as a fork of the LinkedIn agent skill by Jake Schincariol, and grew into a full pack: an execution model instead of drafts only, a portable profile directory, ChatGPT sidecars, a Muse router, a campaign-level outreach skill, an email discovery and outreach skill, an own-account stats skill, a job-description matcher, an official-API publisher, a poll skill, a Featured and Services curator, and a manual analytics journal.
 
 ## A few honest notes
 
@@ -130,7 +137,7 @@ Sparkedin is built and maintained by Krishi Attri. It started as a fork of the L
 
 ## Credit
 
-Sparkedin is a fork of the LinkedIn agent skill by Jake Schincariol, [opusjake.ai](https://opusjake.ai), MIT licensed. The original is at [github.com/Jakeschincariol/linkedin-agent-skill](https://github.com/Jakeschincariol/linkedin-agent-skill). The execution model, the portable profile directory, the ChatGPT sidecars, the Muse router, the outreach skill, the email skill, and the stats skill are new here. The hooks, the humanizer scripts, the lexicon, and the rubric are his.
+Sparkedin is a fork of the LinkedIn agent skill by Jake Schincariol, [opusjake.ai](https://opusjake.ai), MIT licensed. The original is at [github.com/Jakeschincariol/linkedin-agent-skill](https://github.com/Jakeschincariol/linkedin-agent-skill). The execution model, the portable profile directory, the ChatGPT sidecars, the Muse router, the outreach skill, the email skill, the stats skill, the job-description matcher, the publisher, the poll skill, the services skill, and the analytics skill are new here. The hooks, the humanizer scripts, the lexicon, and the rubric are his.
 
 ## License
 
