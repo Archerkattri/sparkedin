@@ -1,6 +1,6 @@
 # Sparkedin
 
-**Fourteen LinkedIn skills that do the work. Free, MIT licensed, no signup, no API key.**
+**Fifteen LinkedIn skills that do the work. Free, MIT licensed, no signup, no API key.**
 
 Sparkedin turns your AI agent into your LinkedIn operator. It writes your posts, comments on the right threads, replies under your own posts, runs outreach campaigns, finds work emails and sends the outreach, scores your profile, plans your week, and pulls your own stats. Every word goes out in your voice, and nothing goes out without your say-so.
 
@@ -13,8 +13,9 @@ Built for Muse first. Also works with Claude Code, ChatGPT, and Codex.
 - **Reach out.** Full campaigns. Pick the path first, then the note, the DM, two follow-ups, and the thank-you when they accept. Every target tracked. And the email half: find their work address, label it published or a guess, send the CV outreach, watch for the bounce.
 - **Measure.** Your profile scored out of 100 with fixes in order, your past posts ranked by what actually worked, and your own engagement pulled into JSON and a dashboard.
 - **Sound like you.** Every word passes through the humanizer first. It strips invisible characters, stock phrasing, and the tells that make generated text read as generated, then scores the result before it goes out.
+- **Look human.** Banners, post images, and carousel art that do not read as AI slop. The tells, the human-made principles, and the banner prompt, built from real use.
 
-## The fourteen
+## The fifteen
 
 | Command | What it does |
 | --- | --- |
@@ -32,6 +33,7 @@ Built for Muse first. Also works with Claude Code, ChatGPT, and Codex.
 | `/sp-inbox` | Triages the inbox into lead, recruiter, peer, ask, or spam, and tells you which tell gave the sequence away. |
 | `/sp-audit` | Post-mortem on what you have already published. Ranks by engagement rate and reach multiple, not impressions. |
 | `/sp-stats` | Your own posts and engagement into local JSON, plus a dashboard. Experimental: LinkedIn internals change without notice. |
+| `/sp-visual` | Banners, post images, and carousel art that do not look AI-generated. The slop tells, the human-made principles, and the banner prompt. |
 
 ## The humanizer
 
