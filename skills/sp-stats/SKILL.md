@@ -15,7 +15,8 @@ description: >-
 > own logged-in browser session. LinkedIn changes those internals without
 > notice, so any step below can stop working. When it does, the fix is to
 > re-discover the endpoint and the field names from the live page, not to
-> force the old ones. The method was last verified 22 Sep 2026.
+> force the old ones. The Voyager method was last verified 22 Sep 2026; the
+> Activity-page fallback in section 0a was verified 16 Nov 2026.
 
 Own account only. Your own posts, your own engagement, read from your own
 Chrome session. Nothing here touches anyone else's data.
@@ -33,6 +34,30 @@ until the account has been quiet for a few days, or run a small sample
 first (one page of posts, counts only) and check it lands clean. A full
 history is 2,600 requests, which is exactly the kind of volume that gets an
 account restricted again.
+
+## 0a. Browser-task fallback: read the Activity page directly
+
+The Voyager method above needs in-page JavaScript and headers the host
+browser tool may not provide. Verified 16 Nov 2026: in a browser task,
+DevTools shortcuts did not open DevTools, right-click produced no menu, and
+navigating directly to a Voyager URL returned "CSRF check failed" because
+plain navigation cannot send the csrf-token header. When the Voyager fetch
+is unavailable, do this instead:
+
+1. Open `https://www.linkedin.com/in/me/recent-activity/all/` (Posts tab),
+   scroll to the end until the footer is visible and no further entries
+   load. Check the Videos and Images tabs the same way.
+2. Record the counts LinkedIn itself displays per entry (likes, comments,
+   reposts, impressions where shown). A button showing no count is 0.
+3. Reposts carry the ORIGINAL author's counts. Record them separately and
+   never rank them against the user's own posts.
+4. Verify in a second session if one is available. Likes, comments and
+   reposts should match exactly; impressions drift slightly because they
+   are live.
+5. Save the same posts.json shape (with isReshare flagged) and note the
+   method as "activity-page" in meta.json. Do not claim Voyager-level
+   completeness: per-post reactors and commenters are not available this
+   way, so sections 5 and 6 do not apply to a fallback sample.
 
 ## 1. Setup
 
