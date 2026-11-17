@@ -19,10 +19,10 @@ scheduled.md. Muse uses `~/workspace/linkedin/`, Claude Code uses
 
 Runs the user's X account as the public voice of his repos. The account
 is [@archerkattri](https://x.com/archerkattri): display name
-"ArcherKAttri", GitHub profile photo, bio "Robot perception PhD building
-visuo-tactile SLAM. I make open-source agent skills for LinkedIn and talk
-about my repos here.", website link to the Sparkedin repo. Joined
-November 2026. Credentials live in the Secure Vault (x.com login); the
+"ArcherKAttri", GitHub profile photo, bio "just tryna do what i like"
+(the same as his GitHub bio, his call 17 November 2026: his life is
+not just the PhD and the LinkedIn skill), website link to the
+Sparkedin repo. Joined November 2026. Credentials live in the Secure Vault (x.com login); the
 browser task signs in with them, it never asks the user for a password
 in chat.
 
