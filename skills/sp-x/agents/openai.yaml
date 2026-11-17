@@ -1,6 +1,0 @@
-interface:
-  display_name: "Sparkedin X"
-  short_description: "Run your X account for your repos: launch posts, replies, media, and polls"
-  default_prompt: "Use $sp-x to write an X post about my repo"
-policy:
-  allow_implicit_invocation: true
