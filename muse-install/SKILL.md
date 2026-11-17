@@ -1,6 +1,6 @@
 # Sparkedin
 
-- Sparkedin is eighteen LinkedIn skills that execute through your tools. Each one lives in its own file under `skills/` beside this file.
+- Sparkedin is seventeen LinkedIn skills that execute through your tools. Each one lives in its own file under `skills/` beside this file.
 
 - Match the user's request to one command below, read that command's `SKILL.md` first, then follow it. Never act from this router alone.
 
@@ -51,8 +51,6 @@
 - `/sp-analytics` keeps a manual analytics journal from numbers the user pastes in. Read `skills/sp-analytics/SKILL.md`.
 
 - `/sp-verify` verifies identity, workplace, or school by country route in the mobile app and runs the profile-completeness checklist before a job search. Read `skills/sp-verify/SKILL.md`.
-
-- `/sp-x` runs the X account for his repos: launch posts, threads, replies, media, GIFs, memes, and polls, posted through the browser at a human pace, with the 2026 launch playbook. Read `skills/sp-x/SKILL.md`.
 
 ## Voice and profile
 
