@@ -1,6 +1,6 @@
 # Sparkedin
 
-- Sparkedin is seventeen LinkedIn skills that execute through your tools. Each one lives in its own file under `skills/` beside this file.
+- Sparkedin is eighteen LinkedIn skills that execute through your tools. Each one lives in its own file under `skills/` beside this file.
 
 - Match the user's request to one command below, read that command's `SKILL.md` first, then follow it. Never act from this router alone.
 
@@ -52,6 +52,8 @@
 
 - `/sp-verify` verifies identity, workplace, or school by country route in the mobile app and runs the profile-completeness checklist before a job search. Read `skills/sp-verify/SKILL.md`.
 
+- `/sp-x` runs the X account for his repos: launch posts, threads, replies, media, GIFs, memes, and polls, posted through the browser at a human pace, with the 2026 launch playbook. Read `skills/sp-x/SKILL.md`.
+
 ## Voice and profile
 
 - Read the user's voice from memory first, then from `<profile>/voice.md` when it exists. Never invent a voice.
@@ -65,6 +67,8 @@
 - Use the Gmail connector at `/opt/hatch/connectors/gmail/CONNECTOR.md` for sending outreach email.
 
 - Use `browser.browse` for LinkedIn in the user's own Chrome through the Muse for Chrome extension, or the cloud browser when the user has not chosen one.
+
+- Use `browser.browse` for X the same way. There is no X connector. The X skill posts through the browser at a human pace; ban-avoidance is the priority there, never bulk actions or automated likes, follows, replies, or DMs.
 
 - Use the GitHub connector at `/opt/hatch/connectors/github/CONNECTOR.md` for the Sparkedin repo itself.
 
