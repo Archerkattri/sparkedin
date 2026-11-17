@@ -78,6 +78,16 @@ cold outreach sits near the benchmarks above instead of above them.
 Never scrape or guess personal details. Use only what the user provides, or
 public professional pages they point to.
 
+## 0.5 Live state first
+
+Before any send in a session, confirm the account is clear: no
+restriction, warning, checkpoint, or verification page. If the tracker
+or log disagrees with live state (for example the log says a restriction
+is in effect but no restriction page appears), correct the log
+immediately, note the date, and work from the live state. A stale log
+that contradicts what the browser shows is a bug, not a record. Never
+send from a session that shows a restriction page; stop and report it.
+
 ## 1. Pick the path
 
 Recommend the path with the best odds, and say why in one line:
@@ -199,8 +209,9 @@ they accept, or the next morning at the latest.
 
 - **Two to four sentences, specific and short.** One line of thanks that
   names what they did or said, one line of who you are, one specific
-  line about their work or team, one soft line about hearing what they
-  are building. No benchmark study of thank-you DM formats was found;
+  line about their work or team that names a real paper, project, post,
+  or team, not just the company name, one soft line about hearing what
+  they are building. No benchmark study of thank-you DM formats was found;
   the rule is practitioner consensus, evidence Weak.
 - Shape: `Hi [Name], thanks for connecting. I am [one line of who you are].
   Your work at [Company] is close to what I work on. Would love to hear what
@@ -263,7 +274,10 @@ For multiple targets, keep `<profile>/outreach.md` (append):
 Track sent, accepted, replied, and meeting for every target, so the
 skill learns its own rates instead of quoting vendor benchmarks as its
 own. Personalise every message. No identical blasts. Update the row when
-a reply lands, a follow-up goes out, or the thread closes. Prune
+a reply lands, a follow-up goes out, or the thread closes. When a
+connection accepts, set Follow-up on to the +4 day date; after the +4
+day message goes out, set it to the +10 day date. A thank-you with no
+follow-up date is an unfinished row. Prune
 non-responders after 30 days: mark them closed, stop following up, and
 do not re-queue them without a new reason.
 

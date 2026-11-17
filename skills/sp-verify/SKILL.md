@@ -59,7 +59,7 @@ Recruiters can filter search results to verified members only. That is the pract
 
 ## The profile-completeness checklist
 
-Run this before any job search, after verification. Read the live profile (use `/sp-profile` for the scored version) and check each item. Report each one as done, missing, or partial, with the fix in one line. Never mark an item done from memory. If it cannot be read, mark it unverified, not done. This checklist is the skill's own readiness check, not a LinkedIn score: LinkedIn no longer surfaces an All-Star meter or any profile completeness score.
+Run this before any job search, after verification. Read the live profile (use `/sp-profile` for the scored version) and check each item. Report each one as done, missing, or partial, with the fix in one line. Never mark an item done from memory. If it cannot be read, mark it unverified, not done. This checklist is the skill's own readiness check, not a LinkedIn score: LinkedIn no longer surfaces an All-Star meter or any profile completeness score. Read full pages, never previews. Expand every collapsed section before counting, and record the live heading count as the source of truth.
 
 - **Photo.** A real headshot, current, face visible, no heavy filter.
 - **Headline.** 220 characters, says what you do and who it is for, not just a job title.
@@ -67,7 +67,7 @@ Run this before any job search, after verification. Read the live profile (use `
 - **Experience.** Every role has a title, dates, and at least one result with a number.
 - **Skills.** 35 to 50 skills listed from LinkedIn's taxonomy, top 3 pinned, and the top 3 to 5 are the ones that matter and match the roles being applied for. Aim for 10 or more endorsements on the top 3 to 5: endorsements are a weak, logarithmic signal, so 0 to 10 matters and 50 to 200 adds about nothing.
 - **Featured.** At least one item pinned: the best work, not the most recent.
-- **Open to Work.** Titles, locations, and job types set, and the visibility choice made on purpose (recruiters only, or the public frame).
+- **Open to Work.** Titles, locations, and job types set, and the visibility choice made on purpose (recruiters only, or the public frame). Then check the public card the way a signed-out viewer sees it: reload the profile and read what the card actually displays. LinkedIn's settings store titles and job types only as one preference text, and the public card may show locations only. Report what the card shows, not what the settings say.
 - **Services.** Only if the user sells services. If they do, up to 10 services listed with a description and a rate range. If they do not, skip it and say so.
 
 Log the result in `<profile>/log.md` with the date and the count of done, missing, and partial items. Hand the fixes to `/sp-profile`, which rewrites in fix-first order.

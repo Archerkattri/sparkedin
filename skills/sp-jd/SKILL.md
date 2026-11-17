@@ -160,7 +160,10 @@ the table, it never leads it.
   Recruitics survey from October 2026 of 159 large-employer talent
   acquisition leaders found 27% would block agent applications outright
   and 35% would flag them. Duplicate and off-target applications are
-  visible in the ATS history and burn the account.
+  visible in the ATS history and burn the account. If the user authorizes
+  an auto-apply or Easy Apply run anyway, show them this warning once,
+  before the run starts, with the numbers above. Authorization stands
+  after the warning is shown; do not re-show it for the same run.
 - **Never use keyword stuffing, white text, hidden keywords, or hidden
   prompts.** They are detectable and disqualifying. Recruiters plant
   hidden prompts in postings to catch AI answers, so a hidden instruction

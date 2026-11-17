@@ -50,6 +50,22 @@ it out of the total. Never score it zero and never guess it. The total is
 out of the points for the verified items only, so say that plainly, for
 example 28/58 with 42 points unverified, and say what would verify them.
 
+## Verify before you report
+
+A claim that an edit is live is not verified until the live profile has
+been re-read after the edit, in a fresh read, and the new text compared
+word for word. "Saved" on a confirmation screen is not verification.
+Never mark an item done from memory, and never report an edit as live
+from the tool that made it. If the re-read cannot be done, mark the item
+unverified and say so plainly.
+
+Never score from a collapsed preview. Expand every section before
+counting: open the full Skills page and record the live heading count
+(for example "Skills (73)") as the source of truth, not the number of
+items visible in the preview. The same applies to every counted section:
+Featured, Activity, recommendations. A partial read is an unverified
+read.
+
 ```
 PROFILE SCORE  41/100
 
@@ -149,7 +165,12 @@ connections-only even when featured.
 by raw impressions. Pick the top 3 to 5. A post the user loves that nobody
 read does not go in Featured. A post that earned real comments does.
 No measured conversion data exists for Featured order or count, so
-3 to 5, best first, is practitioner consensus, not evidence.
+3 to 5, best first, is practitioner consensus, not evidence. Do not
+finalize a Featured order without at least one analytics sample. If
+`<profile>/analytics.md` does not exist and no `/sp-audit` or
+`/sp-analytics` output exists, run one first, or mark the order
+provisional and say so. A Featured order picked with no performance data
+is a guess, not a ranking.
 
 **2. Mix the types.** A good Featured section is not six posts. Aim for a
 mix across these four, in this order:
