@@ -6,6 +6,8 @@ Sparkedin turns your AI agent into your LinkedIn operator. It writes your posts,
 
 Built for Muse first. Also works with Claude Code, ChatGPT, and Codex.
 
+If Sparkedin helped you, star the repo. It is the fastest way to help other people find it.
+
 ## What it does
 
 - **Write.** One idea becomes a post built on 21 hook formulas, ranked by 2026 evidence, with three hook options and a full draft, or a document post as slide copy and a PDF.
